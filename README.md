@@ -44,5 +44,5 @@ curl -u admin:admin -i -H 'X-Requested-By: ambari' -X DELETE http://sandbox.hort
 ```
   - Remove artifacts 
 ```
-/var/lib/ambari-server/resources/stacks/HDP/2.2/services/VNC/remove.sh
+/var/lib/ambari-server/resources/stacks/HDP/2.2/services/vnc-stack/remove.sh
 ```
