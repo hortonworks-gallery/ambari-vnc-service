@@ -37,9 +37,9 @@ Click the eclipse shortcut to start Eclipse
 ![Image](../master/screenshots/screenshot-vnc-eclipsestarted.png?raw=true)
 
 - To remove the service: 
-1. stop the service via Ambari
-2. Delete the service
+  - Stop the service via Ambari
+  - Delete the service
 ```
 curl -u admin:admin -i -H 'X-Requested-By: ambari' -X DELETE http://sandbox.hortonworks.com:8080/api/v1/clusters/Sandbox/services/VNC
 ```
-3. Remove artifacts /var/lib/ambari-server/resources/stacks/HDP/2.2/services/VNC/remove.sh
+  - Remove artifacts /var/lib/ambari-server/resources/stacks/HDP/2.2/services/VNC/remove.sh
