@@ -37,7 +37,7 @@ On logging in you will see the CentOS desktop running on the sandbox
 Click the eclipse shortcut to start Eclipse
 ![Image](../master/screenshots/screenshot-vnc-eclipsestarted.png?raw=true)
 
-- To remove the service: 
+- To remove the VNC service: 
   - Stop the service via Ambari
   - Delete the service
 ```
@@ -47,3 +47,32 @@ curl -u admin:admin -i -H 'X-Requested-By: ambari' -X DELETE http://sandbox.hort
 ```
 /var/lib/ambari-server/resources/stacks/HDP/2.2/services/vnc-stack/remove.sh
 ```
+
+- As a next step, try setting up the Twitter storm topology from [here](https://github.com/abajwa-hw/hdp22-hive-streaming#step-4-import-tweets-for-users-into-hive-orc-table-via-storm)
+You can get the sample code by running "git clone" from your repo (git already installed on sandbox)
+```
+cd /root
+git clone https://github.com/abajwa-hw/hdp22-hive-streaming.git 
+```
+
+- Once you already have your storm code on the VM, just import the dir containing the pom.xml into Eclipse:
+File > Import > Existing Maven Projects > navigate to your code (e.g. /root/hdp22-hive-streaming)  > OK
+
+- Check the java compiler is using 1.7:
+File > Properties > Java Compiler > uncheck "use compliance from..." > set "Compiler compliance level" to 1.7 > OK
+
+- The eclipse project should build on its own and not show errors (if not, you may need to add jars to the project properties)
+
+- To run maven compile: Run > Run as > Maven Build
+  - The first time you do this, it will ask you for the configuration:
+    - Under ‘Goals’: clean install
+    - Under Maven Runtime, add your existing mvn install on the sandbox (its faster than using the embedded one)
+    - Configure > Add > click ‘Directory’ and navigate to the dir where you installed mvn (e.g. /usr/share/maven/latest)
+    
+- Eclipse should now be able to run a mvn compile and create the uber jar
+
+- Now from terminal, run your topology:
+```
+cd /root/hdp22-hive-streaming
+storm jar ./target/storm-test-1.0-SNAPSHOT.jar test.HiveTopology
+```    
