@@ -50,12 +50,13 @@ Click the eclipse shortcut to start Eclipse
     /var/lib/ambari-server/resources/stacks/HDP/2.2/services/vnc-stack/remove.sh
     ```
 
-- As a next step, try setting up the Twitter storm topology from [here](https://github.com/abajwa-hw/hdp22-hive-streaming#step-4-import-tweets-for-users-into-hive-orc-table-via-storm).
+- As a next step, try setting up the Twitter storm topology project in Eclipse to become familiar with how it works.
 You can get the sample code by running "git clone" from your repo (git already installed on sandbox)
     ```
     cd /root
     git clone https://github.com/abajwa-hw/hdp22-hive-streaming.git 
     ```
+- You will need to complete the pre-requisites mentioned (i.e. install mvn, enable Hive transactions, create Hive table) [here](https://github.com/abajwa-hw/hdp22-hive-streaming#step-4-import-tweets-for-users-into-hive-orc-table-via-storm).
 
 - Once you already have your storm code on the VM, just import the dir containing the pom.xml into Eclipse:
 File > Import > Existing Maven Projects > navigate to your code (e.g. /root/hdp22-hive-streaming)  > OK
