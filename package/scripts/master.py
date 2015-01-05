@@ -22,7 +22,7 @@ class Master(Script):
         Execute('wget http://www.gtlib.gatech.edu/pub/eclipse/technology/epp/downloads/release/luna/SR1/eclipse-java-luna-SR1-linux-gtk-x86_64.tar.gz')
         Execute('tar -zxvf eclipse-java-luna-SR1-linux-gtk-x86_64.tar.gz -C /usr/')
         Execute('ln -s /usr/eclipse/eclipse /usr/bin/eclipse')
-	Execute('ln -s /usr/eclipse/eclipse ~/Desktop/eclipse')
+	#Execute('ln -s /usr/eclipse/eclipse ~/Desktop/eclipse')
 
   def configure(self, env):
     import params
