@@ -40,13 +40,13 @@ Click the eclipse shortcut to start Eclipse
 - To remove the VNC service: 
   - Stop the service via Ambari
   - Delete the service
-```
-curl -u admin:admin -i -H 'X-Requested-By: ambari' -X DELETE http://sandbox.hortonworks.com:8080/api/v1/clusters/Sandbox/services/VNC
-```
+    ```
+    curl -u admin:admin -i -H 'X-Requested-By: ambari' -X DELETE http://sandbox.hortonworks.com:8080/api/v1/clusters/Sandbox/services/VNC
+    ```
   - Remove artifacts 
-```
-/var/lib/ambari-server/resources/stacks/HDP/2.2/services/vnc-stack/remove.sh
-```
+    ```
+    /var/lib/ambari-server/resources/stacks/HDP/2.2/services/vnc-stack/remove.sh
+    ```
 
 - As a next step, try setting up the Twitter storm topology from [here](https://github.com/abajwa-hw/hdp22-hive-streaming#step-4-import-tweets-for-users-into-hive-orc-table-via-storm)
 You can get the sample code by running "git clone" from your repo (git already installed on sandbox)
