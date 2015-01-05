@@ -50,6 +50,8 @@ Click the eclipse shortcut to start Eclipse
     /var/lib/ambari-server/resources/stacks/HDP/2.2/services/vnc-stack/remove.sh
     ```
 
+#### Getting started with Storm and Maven in Eclipse environment
+
 - As a next step, try setting up the Twitter storm topology project in Eclipse to become familiar with how it works.
 You can get the sample code by running "git clone" from your repo (git already installed on sandbox)
     ```
