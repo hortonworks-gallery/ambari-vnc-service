@@ -21,6 +21,7 @@ git clone https://github.com/abajwa-hw/vnc-stack.git
 sudo service ambari restart
 ```
 - Then you can click on 'Add Service' from the 'Actions' dropdown menu in the bottom left of the Ambari dashboard:
+
 On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> Enter password -> Next -> Deploy
 ![Image](../master/screenshots/screenshot-vnc-config.png?raw=true)
 
