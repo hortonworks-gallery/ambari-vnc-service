@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+ 
+<configuration>
+ <property require-input="true">
+    <name>vnc.password</name>
+    <value></value>
+    <property-type>PASSWORD</property-type>
+    <description>VNC password</description>
+ </property>
+  <property>
+    <name>vnc.geometry</name>
+    <value>1400x860</value>
+    <description>VNC screen geometry/resolution</description>
+ </property>
+  <property>
+    <name>install.eclipse</name>
+    <value>true</value>
+    <description>Should eclipse also be installed?</description>
+ </property>
+</configuration>
+
