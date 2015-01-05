@@ -42,4 +42,7 @@ Click the eclipse shortcut to start Eclipse
 ```
 curl -u admin:admin -i -H 'X-Requested-By: ambari' -X DELETE http://sandbox.hortonworks.com:8080/api/v1/clusters/Sandbox/services/VNC
 ```
-  - Remove artifacts /var/lib/ambari-server/resources/stacks/HDP/2.2/services/VNC/remove.sh
+  - Remove artifacts 
+```
+/var/lib/ambari-server/resources/stacks/HDP/2.2/services/VNC/remove.sh
+```
