@@ -32,7 +32,7 @@
       	    <configuration-dependencies>
         	<config-type>vnc-config</config-type>
       	    </configuration-dependencies>
-            <restartRequiredAfterChange>true</restartRequiredAfterChange>
+            <!-- <restartRequiredAfterChange>true</restartRequiredAfterChange> -->
         </service>
     </services>
 </metainfo>

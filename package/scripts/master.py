@@ -33,7 +33,11 @@ class Master(Script):
   def start(self, env):
     Execute('/sbin/service   vncserver start')
     #create desktop link if doesn't exist
-    Execute('[ ! -f ~/Desktop/eclipse ] && ln -s /usr/eclipse/eclipse ~/Desktop/eclipse')
+    if (not os.path.isfile('~/Desktop/eclipse')):
+        #create Desktop dir if it does not exist
+        if not os.path.exists('~/Desktop'):
+            os.makedirs('~/Desktop')
+        Execute('ln -s /usr/eclipse/eclipse ~/Desktop/eclipse')
 
   def status(self, env):
     Execute('/sbin/service   vncserver status')
