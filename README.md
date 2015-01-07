@@ -1,5 +1,5 @@
 #### Developer Quickstart on HDP Sandbox using Ambari Stacks
-An Ambari Stack service package for VNC Server with the ability to install Eclipse as well to 'remote desktop' to the sandbox and quickly start developing on HDP Hadoop
+An Ambari Stack service package for VNC Server with the ability to install Eclipse/IntelliJ as well to 'remote desktop' to the sandbox and quickly start developing on HDP Hadoop
 
 - Download HDP 2.2 sandbox VM image (Sandbox_HDP_2.2_VMware.ova) from [Hortonworks website](http://hortonworks.com/products/hortonworks-sandbox/)
 - Import Sandbox_HDP_2.2_VMware.ova into VMWare and set the VM memory size to 8GB
@@ -36,6 +36,9 @@ On logging in you will see the CentOS desktop running on the sandbox
 
 Click the eclipse shortcut to start Eclipse
 ![Image](../master/screenshots/screenshot-vnc-eclipsestarted.png?raw=true)
+
+Click the intellij shortcut to start IntelliJ
+![Image](../master/screenshots/screenshot-screenshot-IntelliJ.png?raw=true)
 
 - To remove the VNC service: 
   - Stop the service via Ambari
