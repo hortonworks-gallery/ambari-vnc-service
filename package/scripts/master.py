@@ -1,4 +1,4 @@
-import sys, os, pwd, signal
+import sys, os, pwd, signal, time
 from resource_management import *
 from subprocess import call
 
@@ -20,7 +20,11 @@ class Master(Script):
         Execute('cd /usr')
         Execute('wget http://www.gtlib.gatech.edu/pub/eclipse/technology/epp/downloads/release/luna/SR1/eclipse-java-luna-SR1-linux-gtk-x86_64.tar.gz')
         Execute('tar -zxvf eclipse-java-luna-SR1-linux-gtk-x86_64.tar.gz -C /usr/')
-        Execute('ln -s /usr/eclipse/eclipse /usr/bin/eclipse')
+
+    if params.install_intellij:
+        Execute('cd /usr')
+        Execute('wget http://download-cf.jetbrains.com/idea/ideaIC-14.0.2.tar.gz')
+        Execute('tar -zxvf ideaIC-14.0.2.tar.gz -C /usr/')
 
   def configure(self, env):
     import params
@@ -30,13 +34,25 @@ class Master(Script):
     Execute('/sbin/service   vncserver stop')
       
   def start(self, env):
+    import params
     Execute('/sbin/service   vncserver start')
-    #create desktop link if doesn't exist
-    if (not os.path.isfile('~/Desktop/eclipse')):
+    time.sleep(5)
+
+    #create eclipse desktop link if doesn't exist
+    if (params.install_eclipse and not os.path.isfile('~/Desktop/eclipse')):
         #create Desktop dir if it does not exist
         if not os.path.exists('~/Desktop'):
             os.makedirs('~/Desktop')
         Execute('ln -s /usr/eclipse/eclipse ~/Desktop/eclipse')
+
+    #create intellij desktop link if doesn't exist
+    if (params.install_intellij and not os.path.isfile('~/Desktop/intellij.sh')):
+        #create Desktop dir if it does not exist
+        if not os.path.exists('~/Desktop'):
+            os.makedirs('~/Desktop')
+        Execute('echo "export JAVA_HOME=/usr/jdk64/jdk1.7.0_67" > ~/Desktop/intellij.sh')
+        Execute('echo "/usr/idea-IC-139.659.2/bin/idea.sh" >> ~/Desktop/intellij.sh')
+        Execute('chmod 755 ~/Desktop/intellij.sh')
 
   def status(self, env):
     Execute('/sbin/service   vncserver status')

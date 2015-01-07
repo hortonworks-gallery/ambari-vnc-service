@@ -18,5 +18,10 @@
     <value>true</value>
     <description>Should eclipse also be installed?</description>
  </property>
+ <property>
+    <name>install.intellij</name>
+    <value>true</value>
+    <description>Should IntelliJ also be installed?</description>
+ </property>
 </configuration>
 
