@@ -25,19 +25,19 @@ sudo service ambari restart
 On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> Enter password -> Next -> Deploy
 ![Image](../master/screenshots/screenshot-vnc-config.png?raw=true)
 
-On successfull deployment you will see the VNC service as part of Ambari stack and will be able to start/stop the service from here:
+- On successful deployment you will see the VNC service as part of Ambari stack and will be able to start/stop the service from here:
 ![Image](../master/screenshots/screenshot-vnc-stack.png?raw=true)
 
-When you've completed the install process, VNC server will be available at your VM's IP on display 1 with the password you setup
+- When you've completed the install process, VNC server will be available at your VM's IP on display 1 with the password you setup
 ![Image](../master/screenshots/screenshot-vnc-clientsetup.png?raw=true)
 
-On logging in you will see the CentOS desktop running on the sandbox
+- On logging in you will see the CentOS desktop running on the sandbox
 ![Image](../master/screenshots/screenshot-vnc-clientlogin.png?raw=true)
 
-Click the eclipse shortcut to start Eclipse
+- To start Eclipse, click the eclipse shortcut 
 ![Image](../master/screenshots/screenshot-vnc-eclipsestarted.png?raw=true)
 
-Click the intellij shortcut to start IntelliJ
+- To start IntelliJ, click the intellij shortcut 
 ![Image](../master/screenshots/screenshot-IntelliJ.png?raw=true)
 
 - To remove the VNC service: 
