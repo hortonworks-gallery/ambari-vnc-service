@@ -38,7 +38,7 @@ Click the eclipse shortcut to start Eclipse
 ![Image](../master/screenshots/screenshot-vnc-eclipsestarted.png?raw=true)
 
 Click the intellij shortcut to start IntelliJ
-![Image](../master/screenshots/screenshot-screenshot-IntelliJ.png?raw=true)
+![Image](../master/screenshots/screenshot-IntelliJ.png?raw=true)
 
 - To remove the VNC service: 
   - Stop the service via Ambari
