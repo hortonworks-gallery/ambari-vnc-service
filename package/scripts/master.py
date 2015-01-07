@@ -9,7 +9,6 @@ class Master(Script):
     self.configure(env)
     import params
 
-    Execute('yum install -y tigervnc-server firefox')
     Execute('yum groupinstall -y Desktop')
     Execute('mv /etc/sysconfig/vncservers /etc/sysconfig/vncservers.bak')
     Execute('echo VNCSERVERS=\\"1:root\\" > /etc/sysconfig/vncservers')
