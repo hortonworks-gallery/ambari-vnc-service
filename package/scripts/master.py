@@ -39,14 +39,14 @@ class Master(Script):
     time.sleep(5)
 
     #create eclipse desktop link if doesn't exist
-    if (params.install_eclipse and not os.path.isfile('~/Desktop/eclipse')):
+    if (params.install_eclipse and not os.path.exists('~/Desktop/eclipse')):
         #create Desktop dir if it does not exist
         if not os.path.exists('~/Desktop'):
             os.makedirs('~/Desktop')
         Execute('ln -s /usr/eclipse/eclipse ~/Desktop/eclipse')
 
     #create intellij desktop link if doesn't exist
-    if (params.install_intellij and not os.path.isfile('~/Desktop/intellij.sh')):
+    if (params.install_intellij and not os.path.exists('~/Desktop/intellij.sh')):
         #create Desktop dir if it does not exist
         if not os.path.exists('~/Desktop'):
             os.makedirs('~/Desktop')
