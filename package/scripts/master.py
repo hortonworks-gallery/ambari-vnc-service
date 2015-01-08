@@ -37,19 +37,19 @@ class Master(Script):
     import params
     Execute('/sbin/service   vncserver start')
     time.sleep(5)
-
+    desktop = '/root/Desktop'
     #create eclipse desktop link if doesn't exist
-    if (params.install_eclipse and not os.path.exists('~/Desktop/eclipse')):
+    if (params.install_eclipse and not os.path.exists(desktop + '/eclipse')):
         #create Desktop dir if it does not exist
-        if not os.path.exists('~/Desktop'):
-            os.makedirs('~/Desktop')
-        Execute('ln -s /usr/eclipse/eclipse ~/Desktop/eclipse')
+        if not os.path.exists(desktop):
+            os.makedirs(desktop)
+        Execute('ln -s /usr/eclipse/eclipse ~Desktop/eclipse')
 
     #create intellij desktop link if doesn't exist
-    if (params.install_intellij and not os.path.exists('~/Desktop/intellij.sh')):
+    if (params.install_intellij and not os.path.exists(desktop + '/intellij.sh')):
         #create Desktop dir if it does not exist
-        if not os.path.exists('~/Desktop'):
-            os.makedirs('~/Desktop')
+        if not os.path.exists(desktop):
+            os.makedirs(desktop)
         Execute('echo "export JAVA_HOME=/usr/jdk64/jdk1.7.0_67" > ~/Desktop/intellij.sh')
         Execute('echo "/usr/idea-IC-139.659.2/bin/idea.sh" >> ~/Desktop/intellij.sh')
         Execute('chmod 755 ~/Desktop/intellij.sh')
