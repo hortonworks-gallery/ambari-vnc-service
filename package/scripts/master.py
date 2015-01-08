@@ -43,7 +43,7 @@ class Master(Script):
         #create Desktop dir if it does not exist
         if not os.path.exists(desktop):
             os.makedirs(desktop)
-        Execute('ln -s /usr/eclipse/eclipse ~Desktop/eclipse')
+        Execute('ln -s /usr/eclipse/eclipse ~/Desktop/eclipse')
 
     #create intellij desktop link if doesn't exist
     if (params.install_intellij and not os.path.exists(desktop + '/intellij.sh')):
