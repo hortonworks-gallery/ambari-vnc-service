@@ -18,7 +18,14 @@ ssh root@sandbox.hortonworks.com
 ```
 cd /var/lib/ambari-server/resources/stacks/HDP/2.2/services
 git clone https://github.com/abajwa-hw/vnc-stack.git   
+```
+- Restart Ambari
+```
+#on HDP 2.2 sandbox
 sudo service ambari restart
+
+#on other HDP 2.2 setups
+sudo service ambari-server restart
 ```
 - Then you can click on 'Add Service' from the 'Actions' dropdown menu in the bottom left of the Ambari dashboard:
 
