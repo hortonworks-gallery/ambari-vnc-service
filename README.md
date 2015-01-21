@@ -28,9 +28,10 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
 - On successful deployment you will see the VNC service as part of Ambari stack and will be able to start/stop the service from here:
 ![Image](../master/screenshots/screenshot-vnc-stack.png?raw=true)
 
-- When you've completed the install process, VNC server will be available at your VM's IP on display 1 with the password you setup
-  - For this example I installed [Chicken of the VNC](http://sourceforge.net/projects/chicken/). 
-  - For VirtualBox users, you will need to forward port 5901 to avoid connection refused errors
+- When you've completed the install process, VNC server will be available at your VM's IP on display 1 with the password you setup.
+- Note that:
+  - For this example, I installed [Chicken of the VNC](http://sourceforge.net/projects/chicken/) client on my Mac. 
+  - For VirtualBox users, you will need to forward port 5901 to avoid connection refused errors.
 ![Image](../master/screenshots/screenshot-vnc-clientsetup.png?raw=true)
 
 - On logging in you will see the CentOS desktop running on the sandbox
