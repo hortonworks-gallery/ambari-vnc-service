@@ -29,11 +29,17 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
 ![Image](../master/screenshots/screenshot-vnc-stack.png?raw=true)
 
 - When you've completed the install process, VNC server will be available at your VM's IP on display 1 with the password you setup.
+![Image](../master/screenshots/screenshot-vnc-clientsetup.png?raw=true)
+
 - Note that:
   - For this example, I installed [Chicken of the VNC](http://sourceforge.net/projects/chicken/) client on my Mac. 
   - For VirtualBox users, you will need to forward port 5901 to avoid connection refused errors.
-![Image](../master/screenshots/screenshot-vnc-clientsetup.png?raw=true)
-
+  - You may need to open up ports in your firewall as well
+  ```
+  sudo iptables -I INPUT 5 -m state --state NEW -m tcp -p tcp -m multiport --dports 5901:5903,6001:6003 -j ACCEPT
+  sudo service iptables save
+  sudo service iptables restart
+  ```
 - On logging in you will see the CentOS desktop running on the sandbox
 ![Image](../master/screenshots/screenshot-vnc-clientlogin.png?raw=true)
 
