@@ -44,11 +44,11 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
 - Note that:
   - For this example, I installed [Chicken of the VNC](http://sourceforge.net/projects/chicken/) client on my Mac. 
   - For VirtualBox users, you will need to forward port 5901 to avoid connection refused errors.
-  - You may need to open up ports in your firewall as well
+  - You may need to stop your firewall as well:
   ```
-  sudo iptables -I INPUT 5 -m state --state NEW -m tcp -p tcp -m multiport --dports 5901:5903,6001:6003 -j ACCEPT
-  sudo service iptables save
-  sudo service iptables restart
+  service iptables save
+  service iptables stop
+  chkconfig iptables off
   ```
 - On logging in you will see the CentOS desktop running on the sandbox
 ![Image](../master/screenshots/screenshot-vnc-clientlogin.png?raw=true)
