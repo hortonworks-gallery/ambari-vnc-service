@@ -74,6 +74,8 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
   - ![Image](../master/screenshots/screenshot-java-applet.png?raw=true)
 
 
+#### Getting started with Eclipse/IntelliJ
+
 - To start Eclipse, click the eclipse shortcut 
 ![Image](../master/screenshots/screenshot-vnc-eclipsestarted.png?raw=true)
 
