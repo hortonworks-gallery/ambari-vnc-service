@@ -55,6 +55,10 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
   service iptables stop
   chkconfig iptables off
   ```
+    
+  - On logging in you will see the CentOS desktop running on the sandbox
+  ![Image](../master/screenshots/screenshot-vnc-clientlogin.png?raw=true)
+  
 - Option 2: You can also configure using your browser as a VNC client via Java applet
   - Check your [browser supports Java](https://java.com/en/download/help/enable_browser.xml) and [test it](http://java.com/en/download/help/testvm.xml). If not, [fix it](http://java.com/en/download/help/troubleshoot_java.xml) 
   - Open your [Java control panel](https://www.java.com/en/download/help/mac_controlpanel.xml) and add exception for sandbox.hortonworks.com
@@ -68,9 +72,7 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
   - Restart browser and navigate to http://sandbox.hortonworks.com:5801 
   - If all goes well you should see a Java applet in your browser requesting your VNC password. Enter hadoop
   - ![Image](../master/screenshots/screenshot-java-applet.png?raw=true)
-  
-- On logging in you will see the CentOS desktop running on the sandbox
-![Image](../master/screenshots/screenshot-vnc-clientlogin.png?raw=true)
+
 
 - To start Eclipse, click the eclipse shortcut 
 ![Image](../master/screenshots/screenshot-vnc-eclipsestarted.png?raw=true)
