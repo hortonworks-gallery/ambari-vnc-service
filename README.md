@@ -72,7 +72,8 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
   - Restart browser and navigate to http://sandbox.hortonworks.com:5801 
   - If all goes well you should see a Java applet in your browser requesting your VNC password. Enter hadoop
   - ![Image](../master/screenshots/screenshot-java-applet.png?raw=true)
-
+  - To remote desktop into your sandbox form Ambari, you can also setup an [Ambari iFrame view](https://github.com/abajwa-hw/iframe-view) for VNC:
+  ![Image](../master/screenshots/screenshot-VNC-view.png?raw=true)
 
 #### Getting started with Eclipse/IntelliJ
 
