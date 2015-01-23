@@ -39,10 +39,10 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
 ![Image](../master/screenshots/screenshot-vnc-stack.png?raw=true)
 
 - When you've completed the install process, VNC server will be available at your VM's IP on display 1 with the password you setup.
+- Option 1: install [Chicken of the VNC](http://sourceforge.net/projects/chicken/) client on your Mac and use it to connect
 ![Image](../master/screenshots/screenshot-vnc-clientsetup.png?raw=true)
-
 - Note that:
-  - For this example, I installed [Chicken of the VNC](http://sourceforge.net/projects/chicken/) client on my Mac. 
+   
   - For VirtualBox users, you will need to forward port 5901 to avoid connection refused errors.
   - You may need to stop your firewall as well:
   ```
@@ -50,7 +50,7 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
   service iptables stop
   chkconfig iptables off
   ```
-- Instead using a VNC client you can also configure using your browser as a VNC client via Java applet
+- Option 2: You can also configure using your browser as a VNC client via Java applet
   - Check your [browser supports Java](https://java.com/en/download/help/enable_browser.xml) and [test it](http://java.com/en/download/help/testvm.xml). If not, [fix it](http://java.com/en/download/help/troubleshoot_java.xml) 
   - Open your [Java control panel](https://www.java.com/en/download/help/mac_controlpanel.xml) and add exception for sandbox.hortonworks.com
   - Allow Java applets permissions on your local Mac (you should revert this change after you are done with VNC)
