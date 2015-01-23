@@ -1,6 +1,8 @@
 #### Developer Quickstart on HDP Sandbox using Ambari Stacks
 An Ambari Stack service package for VNC Server with the ability to install Eclipse/IntelliJ as well to 'remote desktop' to the sandbox and quickly start developing on HDP Hadoop
 
+##### Setup VNC stack
+
 - Download HDP 2.2 sandbox VM image (Sandbox_HDP_2.2_VMware.ova) from [Hortonworks website](http://hortonworks.com/products/hortonworks-sandbox/)
 - Import Sandbox_HDP_2.2_VMware.ova into VMWare and set the VM memory size to 8GB
 - Now start the VM
@@ -39,6 +41,9 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
 ![Image](../master/screenshots/screenshot-vnc-stack.png?raw=true)
 
 - When you've completed the install process, VNC server will be available at your VM's IP on display 1 with the password you setup.
+
+##### Connect to VNC server
+
 - Option 1: install [Chicken of the VNC](http://sourceforge.net/projects/chicken/) client on your Mac and use it to connect
 ![Image](../master/screenshots/screenshot-vnc-clientsetup.png?raw=true)
 - Note that:
