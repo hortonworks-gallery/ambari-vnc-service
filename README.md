@@ -50,6 +50,20 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
   service iptables stop
   chkconfig iptables off
   ```
+- Instead using a VNC client you can also configure using your browser as a VNC client via Java applet
+  - Check your [browser supports Java](https://java.com/en/download/help/enable_browser.xml) and [test it](http://java.com/en/download/help/testvm.xml). If not, [fix it](http://java.com/en/download/help/troubleshoot_java.xml) 
+  - Open your [Java control panel](https://www.java.com/en/download/help/mac_controlpanel.xml) and add exception for sandbox.hortonworks.com
+  - Allow Java applets permissions on your local Mac (you should revert this change after you are done with VNC)
+   ```
+   sudo vi "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/security/java.policy"
+   #add permission line below the grant
+   grant {
+           permission java.security.AllPermission;
+   ```
+  - Restart browser and navigate to http://sandbox.hortonworks.com:5801 
+  - If all goes well you should see a Java applet in your browser requesting your VNC password. Enter hadoop
+  - ![Image](../master/screenshots/screenshot-java-applet.png?raw=true)
+  
 - On logging in you will see the CentOS desktop running on the sandbox
 ![Image](../master/screenshots/screenshot-vnc-clientlogin.png?raw=true)
 
