@@ -125,6 +125,7 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
 
 - Now from terminal, run your topology:
 ```
+source ~/.bashrc
 cd /root/hdp22-hive-streaming
 storm jar ./target/storm-test-1.0-SNAPSHOT.jar test.HiveTopology
 ```    

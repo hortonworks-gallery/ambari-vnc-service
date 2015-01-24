@@ -15,6 +15,19 @@ class Master(Script):
     Execute('echo VNCSERVERARGS[1]=\\"-geometry '+params.vnc_geometry+'\\" >> /etc/sysconfig/vncservers')
     Execute('echo "'+params.vnc_password+'\n'+params.vnc_password+'\n\n" | vncpasswd')
 
+    if params.install_mvn:
+        Execute('mkdir /usr/share/maven')
+        Execute('cd /usr/share/maven')
+        Execute('wget http://mirrors.koehn.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz')
+        Execute('tar xvzf apache-maven-3.2.5-bin.tar.gz')
+        Execute('ln -s /usr/share/maven/apache-maven-3.2.5/ /usr/share/maven/latest')
+        Execute('echo "M2_HOME=/usr/share/maven/latest" >> ~/.bashrc')
+        Execute('echo "M2=$M2_HOME/bin" >> ~/.bashrc')
+        Execute('echo "PATH=$PATH:$M2" >> ~/.bashrc')
+        Execute('export M2_HOME=/usr/share/maven/latest')
+        Execute('export M2=$M2_HOME/bin')
+        Execute('export PATH=$PATH:$M2')
+
 
     if params.install_eclipse:
         Execute('cd /usr')

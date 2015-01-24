@@ -23,5 +23,10 @@
     <value>true</value>
     <description>Should IntelliJ also be installed?</description>
  </property>
+  <property>
+    <name>install.mvn</name>
+    <value>true</value>
+    <description>Should Maven also be installed?</description>
+ </property>
 </configuration>
 
