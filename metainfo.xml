@@ -25,7 +25,11 @@
                 <osFamily>redhat6</osFamily>
                 <packages>
                   <package><name>tigervnc-server</name></package>
+                  <package><name>tigervnc-server-applet</name></package>
+                  <package><name>xterm</name></package>
+                  <package><name>nmap</name></package>
                   <package><name>firefox</name></package>
+                                                                        
                 </packages>
               </osSpecific>
             </osSpecifics>
