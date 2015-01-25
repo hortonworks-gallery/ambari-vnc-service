@@ -100,10 +100,10 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
 
 - As a next step, try setting up the Twitter storm topology project in Eclipse to become familiar with how it works.
 You can get the sample code by running "git clone" from your repo (git already installed on sandbox)
-    ```
-    cd /root
-    git clone https://github.com/abajwa-hw/hdp22-hive-streaming.git 
-    ```
+```
+cd /root
+git clone https://github.com/abajwa-hw/hdp22-hive-streaming.git 
+```
 - You will need to complete the pre-requisites mentioned (i.e. install mvn, enable Hive transactions, create Hive table) [here](https://github.com/abajwa-hw/hdp22-hive-streaming#step-4-import-tweets-for-users-into-hive-orc-table-via-storm).
 
 - Once you already have your storm code on the VM, just import the dir containing the pom.xml into Eclipse:
