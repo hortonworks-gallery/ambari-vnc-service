@@ -18,8 +18,8 @@ class Master(Script):
     if params.install_mvn:
         Execute('mkdir /usr/share/maven')
         Execute('cd /usr/share/maven')
-        Execute('wget http://mirrors.koehn.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz')
-        Execute('tar xvzf apache-maven-3.2.5-bin.tar.gz')
+        Execute('wget --directory-prefix=/usr/share/maven http://mirrors.koehn.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz')
+        Execute('tar xvzf /usr/share/maven/apache-maven-3.2.5-bin.tar.gz -C /usr/share/maven')
         Execute('ln -s /usr/share/maven/apache-maven-3.2.5/ /usr/share/maven/latest')
         Execute('echo "M2_HOME=/usr/share/maven/latest" >> ~/.bashrc')
         Execute('echo "M2=$M2_HOME/bin" >> ~/.bashrc')
