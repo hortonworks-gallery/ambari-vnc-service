@@ -31,7 +31,7 @@ class Master(Script):
 
     if params.install_eclipse:
         Execute('cd /usr')
-        Execute('wget http://www.gtlib.gatech.edu/pub/eclipse/technology/epp/downloads/release/luna/SR1/eclipse-java-luna-SR1-linux-gtk-x86_64.tar.gz')
+        Execute('wget http://ftp.osuosl.org/pub/eclipse//technology/epp/downloads/release/luna/SR1a/eclipse-java-luna-SR1a-linux-gtk-x86_64.tar.gz')
         Execute('tar -zxvf eclipse-java-luna-SR1-linux-gtk-x86_64.tar.gz -C /usr/')
 
     if params.install_intellij:
