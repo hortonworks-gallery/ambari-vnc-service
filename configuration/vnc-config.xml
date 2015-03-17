@@ -14,19 +14,55 @@
     <description>VNC screen geometry/resolution</description>
  </property>
   <property>
+    <name>log.file</name>
+    <value>/var/log/vnc-stack.log</value>
+    <description>Log file for VNC stack</description>
+ </property> 
+  <property>
     <name>install.eclipse</name>
     <value>true</value>
     <description>Should eclipse also be installed?</description>
  </property>
+  <property>
+    <name>eclipse.location</name>
+    <value>http://ftp.osuosl.org/pub/eclipse//technology/epp/downloads/release/luna/SR1a/eclipse-java-luna-SR1a-linux-gtk-x86_64.tar.gz</value>
+    <description>Location to pull eclipse bits from</description>
+ </property>
+ 
  <property>
     <name>install.intellij</name>
     <value>true</value>
     <description>Should IntelliJ also be installed?</description>
  </property>
   <property>
+    <name>intellij.location</name>
+    <value>http://download-cf.jetbrains.com/idea/ideaIC-14.0.2.tar.gz</value>
+    <description>Location to pull IntelliJ bits from</description>
+ </property>
+  
+  <property>
     <name>install.mvn</name>
     <value>true</value>
     <description>Should Maven also be installed?</description>
  </property>
+ 
+  <property>
+    <name>mvn.location</name>
+    <value>http://mirrors.koehn.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz</value>
+    <description>Location to pull Maven bits from</description>
+ </property>
+ 
+  <property>
+    <name>install.spark</name>
+    <value>true</value>
+    <description>Should Spark 1.2.0 TP also be installed?</description>
+ </property>
+ 
+  <property>
+    <name>spark.location</name>
+    <value>http://public-repo-1.hortonworks.com/HDP-LABS/Projects/spark/1.2.0/spark-1.2.0.2.2.0.0-82-bin-2.6.0.2.2.0.0-2041.tgz</value>
+    <description>Location to pull Spark bits from</description>
+ </property>
+   
 </configuration>
 

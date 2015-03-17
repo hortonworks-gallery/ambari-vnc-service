@@ -9,35 +9,51 @@ class Master(Script):
     self.configure(env)
     import params
 
-    Execute('yum groupinstall -y Desktop')
-    Execute('mv /etc/sysconfig/vncservers /etc/sysconfig/vncservers.bak')
+
+    #params.log_location
+
+    Execute('echo "installing Desktop" >> '+params.log_location)
+    Execute('yum groupinstall -y Desktop >> '+params.log_location)
+    Execute('mv /etc/sysconfig/vncservers /etc/sysconfig/vncservers.bak >> '+params.log_location)
     Execute('echo VNCSERVERS=\\"1:root\\" > /etc/sysconfig/vncservers')
     Execute('echo VNCSERVERARGS[1]=\\"-geometry '+params.vnc_geometry+'\\" >> /etc/sysconfig/vncservers')
     Execute('echo "'+params.vnc_password+'\n'+params.vnc_password+'\n\n" | vncpasswd')
-
+    Execute('echo "Desktop install complete" >> '+params.log_location)
+    
     if params.install_mvn:
+        Execute('echo "Installing mvn..." >> '+params.log_location)      
         Execute('mkdir /usr/share/maven')
-        Execute('cd /usr/share/maven')
-        Execute('wget --directory-prefix=/usr/share/maven http://mirrors.koehn.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz')
-        Execute('tar xvzf /usr/share/maven/apache-maven-3.2.5-bin.tar.gz -C /usr/share/maven')
-        Execute('ln -s /usr/share/maven/apache-maven-3.2.5/ /usr/share/maven/latest')
+        Execute('wget '+params.mvn_location+' -O /usr/share/maven/maven.tar.gz  >> '+params.log_location)
+        Execute('tar xvzf /usr/share/maven/maven.tar.gz -C /usr/share/maven  >> '+params.log_location)
+        Execute('ln -s /usr/share/maven/apache-maven-*/ /usr/share/maven/latest')
         Execute('echo "M2_HOME=/usr/share/maven/latest" >> ~/.bashrc')
         Execute('echo "M2=$M2_HOME/bin" >> ~/.bashrc')
         Execute('echo "PATH=$PATH:$M2" >> ~/.bashrc')
-        Execute('export M2_HOME=/usr/share/maven/latest')
-        Execute('export M2=$M2_HOME/bin')
-        Execute('export PATH=$PATH:$M2')
-
+        Execute('echo maven install complete  >> '+params.log_location)         
 
     if params.install_eclipse:
-        Execute('cd /usr')
-        Execute('wget http://ftp.osuosl.org/pub/eclipse//technology/epp/downloads/release/luna/SR1a/eclipse-java-luna-SR1a-linux-gtk-x86_64.tar.gz')
-        Execute('tar -zxvf eclipse*.tar.gz -C /usr/')
+        Execute('echo "Installing eclipse..." >> '+params.log_location)     
+        Execute('wget ' +params.eclipse_location+' -O /usr/eclipse.tar.gz  >> '+params.log_location)
+        Execute('tar -zxvf /usr/eclipse.tar.gz -C /usr/  >> '+params.log_location)
+        Execute('echo  eclipse install complete  >> '+params.log_location)        
 
     if params.install_intellij:
-        Execute('cd /usr')
-        Execute('wget http://download-cf.jetbrains.com/idea/ideaIC-14.0.2.tar.gz')
-        Execute('tar -zxvf ideaIC-14.0.2.tar.gz -C /usr/')
+        Execute('echo "Installing intelliJ..."  >> '+params.log_location)    
+        Execute('wget '+params.intellij_location+' -O  /usr/ideaIC.tar.gz  >> '+params.log_location)
+        Execute('tar -zxvf /usr/ideaIC.tar.gz -C /usr/  >> '+params.log_location)
+        Execute('echo "intelliJ install complete"  >> '+params.log_location)    
+        
+    if params.install_spark:
+        Execute('echo "Installing spark..."  >> '+params.log_location)
+        Execute('wget '+params.spark_location+' -O  /usr/spark-1.2.tgz  >> '+params.log_location)
+        Execute('tar xvfz /usr/spark-1.2.tgz -C /usr/  >> '+params.log_location)  
+        Execute('mv `find /usr  -maxdepth 1 -type d -name "spark-*"` /usr/spark-1.2')          
+
+        Execute('echo "export SPARK_HOME=/usr/spark-1.2"  >> ~/.bashrc')      
+        Execute('echo "export YARN_CONF_DIR=/etc/hadoop/conf" >> ~/.bashrc')
+        Execute('echo "spark.driver.extraJavaOptions -Dhdp.version=2.2.0.0-2041" > /usr/spark-1.2/conf/spark-defaults.conf')        
+        Execute('echo "spark.yarn.am.extraJavaOptions -Dhdp.version=2.2.0.0-2041" >> /usr/spark-1.2/conf/spark-defaults.conf')        
+        Execute('echo Spark install complete  >> '+params.log_location)        
 
   def configure(self, env):
     import params
@@ -64,7 +80,7 @@ class Master(Script):
         if not os.path.exists(desktop):
             os.makedirs(desktop)
         Execute('echo "export JAVA_HOME=/usr/jdk64/jdk1.7.0_67" > ~/Desktop/intellij.sh')
-        Execute('echo "/usr/idea-IC-139.659.2/bin/idea.sh" >> ~/Desktop/intellij.sh')
+        Execute('echo "/usr/idea-IC-*/bin/idea.sh" >> ~/Desktop/intellij.sh')
         Execute('chmod 755 ~/Desktop/intellij.sh')
 
   def status(self, env):
