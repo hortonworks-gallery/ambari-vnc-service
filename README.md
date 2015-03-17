@@ -1,5 +1,6 @@
 #### Developer Quickstart on HDP Sandbox using Ambari Stacks
-An Ambari Stack service package for VNC Server with the ability to install developer tools like Eclipse/IntelliJ/Maven as well to 'remote desktop' to the sandbox and quickly start developing on HDP Hadoop
+An Ambari Stack service package for VNC Server with the ability to install developer tools like Eclipse/IntelliJ/Maven as well to 'remote desktop' to the sandbox and quickly start developing on HDP Hadoop.
+Also includes the option to install the [Spark 1.2.0 Tech Preview](http://hortonworks.com/hadoop-tutorial/using-apache-spark-hdp/)
 
 ##### Setup VNC stack
 
