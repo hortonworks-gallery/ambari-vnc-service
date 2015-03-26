@@ -6,8 +6,8 @@ Also includes the option to install the [Spark 1.2.0 Tech Preview](http://horton
 
 - [Setup VNC stack](https://github.com/abajwa-hw/vnc-stack#setup-vnc-stack)
 - [Connect to VNC](https://github.com/abajwa-hw/vnc-stack#connect-to-vnc-server)
-  - [Connect using VNC client](https://github.com/abajwa-hw/vnc-stack#connect-via-vnc-client)
-  - [Connect using browser](https://github.com/abajwa-hw/vnc-stack#connect-via-browser)
+  - [Connect via VNC client](https://github.com/abajwa-hw/vnc-stack#connect-via-vnc-client)
+  - [Connect via browser](https://github.com/abajwa-hw/vnc-stack#connect-via-browser)
   - [Connect via Ambari view](https://github.com/abajwa-hw/vnc-stack#connect-via-ambari-view)  
 - [Getting started with Eclipse/IntelliJ](https://github.com/abajwa-hw/vnc-stack#getting-started-with-eclipseintellij)
 - [Getting started with Storm and Maven in Eclipse environment](https://github.com/abajwa-hw/vnc-stack#getting-started-with-storm-and-maven-in-eclipse-environment)
