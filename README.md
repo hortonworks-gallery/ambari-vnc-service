@@ -130,3 +130,15 @@ source ~/.bashrc
 cd /root/hdp22-hive-streaming
 storm jar ./target/storm-test-1.0-SNAPSHOT.jar test.HiveTopology
 ```    
+
+-----------------
+
+#### Getting started with Spark TP
+
+- Run the Spark Pi example
+```
+/usr/spark-1.2/bin/spark-submit --class org.apache.spark.examples.SparkPi    --master yarn-cluster  --num-executors 3 --driver-memory 512m  --executor-memory 512m   --executor-cores 1  /usr/spark-1.2/lib/spark-examples*.jar
+```
+
+- Follow the rest of the examples from the Spark 1.2 on Yarn TP: http://hortonworks.com/hadoop-tutorial/using-apache-spark-hdp/
+
