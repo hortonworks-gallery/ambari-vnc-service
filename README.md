@@ -2,6 +2,17 @@
 An Ambari Stack service package for VNC Server with the ability to install developer tools like Eclipse/IntelliJ/Maven as well to 'remote desktop' to the sandbox and quickly start developing on HDP Hadoop.
 Also includes the option to install the [Spark 1.2.0 Tech Preview](http://hortonworks.com/hadoop-tutorial/using-apache-spark-hdp/)
 
+##### Contents
+
+- [Setup VNC stack](https://github.com/abajwa-hw/vnc-stack#setup-vnc-stack)
+- [Connect to VNC](https://github.com/abajwa-hw/vnc-stack#connect-to-vnc-server)
+  - [Connect using VNC client]()
+  - [Connect using browser]()
+- [Getting started with Eclipse/IntelliJ](https://github.com/abajwa-hw/vnc-stack#getting-started-with-eclipseintellij)
+- [Getting started with Spark TP](https://github.com/abajwa-hw/vnc-stack#getting-started-with-spark-tp)
+
+----------------------
+
 ##### Setup VNC stack
 
 - Download HDP 2.2 sandbox VM image (Sandbox_HDP_2.2_VMware.ova) from [Hortonworks website](http://hortonworks.com/products/hortonworks-sandbox/)
@@ -43,7 +54,11 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
 
 - When you've completed the install process, VNC server will be available at your VM's IP on display 1 with the password you setup.
 
+----------------------
+
 ##### Connect to VNC server
+
+###### Connect via VNC client 
 
 - Option 1: install [Chicken of the VNC](http://sourceforge.net/projects/chicken/) client on your Mac and use it to connect
 ![Image](../master/screenshots/screenshot-vnc-clientsetup.png?raw=true)
@@ -59,6 +74,8 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
     
   - On logging in you will see the CentOS desktop running on the sandbox
   ![Image](../master/screenshots/screenshot-vnc-clientlogin.png?raw=true)
+
+###### Connect via browser 
   
 - Option 2: You can also configure using your browser as a VNC client via Java applet
   - Check your [browser supports Java](https://java.com/en/download/help/enable_browser.xml) and [test it](http://java.com/en/download/help/testvm.xml). If not, [fix it](http://java.com/en/download/help/troubleshoot_java.xml) 
@@ -73,8 +90,13 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
   - Restart browser and navigate to http://sandbox.hortonworks.com:5801 
   - If all goes well you should see a Java applet in your browser requesting your VNC password. Enter hadoop
   - ![Image](../master/screenshots/screenshot-java-applet.png?raw=true)
+  
+###### Connect via Ambari view
+   
   - To **remote desktop into your sandbox from within Ambari**, you can also setup an [Ambari iFrame view](https://github.com/abajwa-hw/iframe-view) and point it to http://sandbox.hortonworks.com:5801:
   ![Image](../master/screenshots/screenshot-VNC-view.png?raw=true)
+
+-------------------
 
 #### Getting started with Eclipse/IntelliJ
 
@@ -96,6 +118,8 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
     ```
     /var/lib/ambari-server/resources/stacks/HDP/2.2/services/vnc-stack/remove.sh
     ```
+
+-----------------
 
 #### Getting started with Storm and Maven in Eclipse environment
 
