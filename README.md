@@ -177,7 +177,7 @@ storm jar ./target/storm-test-1.0-SNAPSHOT.jar test.HiveTopology
 
 - Install iPython notebook service using instructions [here](https://github.com/randerzander/ipython-stack). 
 
-- Setup the [airline demo](https://github.com/abajwa-hw/hdp-datascience-demo) using steps below:
+- Setup the [airline demo](https://github.com/abajwa-hw/hdp-datascience-demo) in iPython using steps below:
 
 - Make sure the sandbox VM is started with large amount of memory (15 GB) in order to run. Also change Ambari setting to run using Tez. Instructions to do these tasks are available on the same airline demo page.
 
