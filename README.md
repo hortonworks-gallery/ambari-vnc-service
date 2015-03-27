@@ -179,8 +179,10 @@ storm jar ./target/storm-test-1.0-SNAPSHOT.jar test.HiveTopology
 
 - Setup the [airline demo](https://github.com/abajwa-hw/hdp-datascience-demo) in iPython using steps below:
 
-- Make sure the sandbox VM is started with large amount of memory (15 GB) in order to run. Also change Ambari setting to run using Tez. Instructions to do these tasks are available on the same airline demo page.
-
+- Make few changes to sandbox VM before setting up airline demo. Instructions to do these tasks are available on the same airline demo page above.
+  - Make sure the sandbox VM is started with large amount of memory (15 GB) and disk to 65GB in order to run. 
+  - Also change Ambari setting to run using Tez. 
+   
 - Download airline delay and weather data and copy into HDFS
 
 ```
@@ -220,7 +222,6 @@ rm $PROJECT_DIR/*.csv
 ```
 cd /home/ipython/notebooks
 wget https://github.com/abajwa-hw/hdp-datascience-demo/blob/master/demo-HDP2.2/airline_python.ipynb
-
 ```
 
 - Launch ipython notebook url and open the notebook at http://sandbox.hortonworks.com:9999
