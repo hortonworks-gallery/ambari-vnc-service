@@ -159,7 +159,7 @@ storm jar ./target/storm-test-1.0-SNAPSHOT.jar test.HiveTopology
 
 -----------------
 
-#### Getting started with Spark TP
+#### Getting started with Spark TP on HDP
 
 - Run the Spark Pi example
 ```
@@ -168,3 +168,60 @@ storm jar ./target/storm-test-1.0-SNAPSHOT.jar test.HiveTopology
 
 - Follow the rest of the examples from the Spark 1.2 on Yarn TP: http://hortonworks.com/hadoop-tutorial/using-apache-spark-hdp/
 
+
+
+-------------------
+
+#### Getting started with iPython Notebook on HDP
+
+- Install iPython notebook service using instructions [here](https://github.com/randerzander/ipython-stack). 
+
+- Try running the [airline demo](https://github.com/abajwa-hw/hdp-datascience-demo):
+
+- Make sure the sandbox VM is started with large amount of memory (15 GB) in order to run. Also change Ambari setting to run using Tez. Instructions to do these tasks are available on the same airline demo page.
+
+- Download airline delay and weather data and copy into HDFS
+
+```
+export HOME_DIR=/home/ipython
+export PROJECT_DIR=/tmp/HDP_DS_setup
+
+sudo -u hdfs hadoop fs -mkdir /user/ipython
+sudo -u hdfs hadoop fs -chown ipython:ipython /user/ipython
+hadoop fs -mkdir /user/ipython/airline
+hadoop fs -mkdir /user/ipython/airline/delay
+hadoop fs -mkdir /user/ipython/airline/weather
+
+
+mkdir $PROJECT_DIR
+cd $PROJECT_DIR
+
+wget http://stat-computing.org/dataexpo/2009/2007.csv.bz2
+bzip2 -d 2007.csv.bz2
+wget http://stat-computing.org/dataexpo/2009/2008.csv.bz2
+bzip2 -d 2008.csv.bz2
+hadoop fs -put *.csv /user/ipython/airline/delay
+#delete copy of data from local FS to save space
+rm $PROJECT_DIR/*.csv
+
+
+wget ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/2007.csv.gz
+gunzip -d 2007.csv.gz
+wget ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/2008.csv.gz
+gunzip -d 2008.csv.gz
+hadoop fs -put *.csv /user/demo/airline/weather
+#delete copy of data from local FS to save space
+rm $PROJECT_DIR/*.csv
+
+```
+
+- download the the python version of the airline demo notebook
+```
+cd /home/ipython/notebooks
+wget https://github.com/abajwa-hw/hdp-datascience-demo/blob/master/demo-HDP2.2/airline_python.ipynb
+
+```
+
+- Launch ipython notebook url and open the notebook at http://sandbox.hortonworks.com:9999
+
+- Run the demo by running through the cells of the ipython notebook using Shift+enter
