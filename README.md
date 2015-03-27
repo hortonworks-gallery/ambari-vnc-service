@@ -10,8 +10,9 @@ Also includes the option to install the [Spark 1.2.0 Tech Preview](http://horton
   - [Connect via browser](https://github.com/abajwa-hw/vnc-stack#connect-via-browser)
   - [Connect via Ambari view](https://github.com/abajwa-hw/vnc-stack#connect-via-ambari-view)  
 - [Getting started with Eclipse/IntelliJ](https://github.com/abajwa-hw/vnc-stack#getting-started-with-eclipseintellij)
-- [Getting started with Storm and Maven in Eclipse environment](https://github.com/abajwa-hw/vnc-stack#getting-started-with-storm-and-maven-in-eclipse-environment)
-- [Getting started with Spark TP](https://github.com/abajwa-hw/vnc-stack#getting-started-with-spark-tp)
+- [Getting started with Storm and Maven in Eclipse environment on HDP](https://github.com/abajwa-hw/vnc-stack#getting-started-with-storm-and-maven-in-eclipse-environment)
+- [Getting started with Spark TP on HDP](https://github.com/abajwa-hw/vnc-stack#getting-started-with-spark-tp-on-hdp)
+- [Getting started with Data science with iPython on HDP](https://github.com/abajwa-hw/vnc-stack#getting-started-with-ipython-notebook-on-hdp)
 
 ----------------------
 
