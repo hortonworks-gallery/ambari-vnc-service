@@ -26,10 +26,10 @@ class Master(Script):
         Execute('wget '+params.mvn_location+' -O /usr/share/maven/maven.tar.gz  >> '+params.log_location)
         Execute('tar xvzf /usr/share/maven/maven.tar.gz -C /usr/share/maven  >> '+params.log_location)
         Execute('ln -s /usr/share/maven/apache-maven-*/ /usr/share/maven/latest')
-        Execute('echo "M2_HOME=/usr/share/maven/latest" >> ~/.bashrc')
-        Execute('echo "M2=$M2_HOME/bin" >> ~/.bashrc')
-        Execute('echo "PATH=$PATH:$M2" >> ~/.bashrc')
-        Execute('echo maven install complete  >> '+params.log_location)         
+        Execute("echo 'M2_HOME=/usr/share/maven/latest' >> ~/.bashrc")
+        Execute("echo 'M2=$M2_HOME/bin' >> ~/.bashrc")
+        Execute("echo 'PATH=$PATH:$M2' >> ~/.bashrc")
+        Execute("echo maven install complete  >> "+params.log_location)         
 
     if params.install_eclipse:
         Execute('echo "Installing eclipse..." >> '+params.log_location)     
