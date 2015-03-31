@@ -57,6 +57,23 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
 
 - When you've completed the install process, VNC server will be available at your VM's IP on display 1 with the password you setup.
 
+- One benefit to wrapping the component in Ambari service is that you can now monitor/manage this service remotely via REST API
+```
+export SERVICE=VNC
+export PASSWORD=admin
+export AMBARI_HOST=sandbox.hortonworks.com
+export CLUSTER=Sandbox
+
+#get service status
+curl -u admin:$PASSWORD -i -H 'X-Requested-By: ambari' -X GET http://$AMBARI_HOST:8080/api/v1/clusters/$CLUSTER/services/$SERVICE
+
+#start service
+curl -u admin:$PASSWORD -i -H 'X-Requested-By: ambari' -X PUT -d '{"RequestInfo": {"context" :"Start $SERVICE via REST"}, "Body": {"ServiceInfo": {"state": "STARTED"}}}' http://$AMBARI_HOST:8080/api/v1/clusters/$CLUSTER/services/$SERVICE
+
+#stop service
+curl -u admin:$PASSWORD -i -H 'X-Requested-By: ambari' -X PUT -d '{"RequestInfo": {"context" :"Stop $SERVICE via REST"}, "Body": {"ServiceInfo": {"state": "INSTALLED"}}}' http://$AMBARI_HOST:8080/api/v1/clusters/$CLUSTER/services/$SERVICE
+```
+
 ----------------------
 
 ##### Connect to VNC server
