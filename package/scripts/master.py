@@ -16,8 +16,8 @@ class Master(Script):
     Execute('yum groupinstall -y Desktop >> '+params.log_location)
     Execute('mv /etc/sysconfig/vncservers /etc/sysconfig/vncservers.bak >> '+params.log_location)
     Execute('echo VNCSERVERS=\\"1:root\\" > /etc/sysconfig/vncservers')
-    Execute('echo VNCSERVERARGS[1]=\\"-geometry '+params.vnc_geometry+'\\" >> /etc/sysconfig/vncservers')
-    Execute('echo "'+params.vnc_password+'\n'+params.vnc_password+'\n\n" | vncpasswd')
+    Execute('echo VNCSERVERARGS[1]=\\"-geometry '+str(params.vnc_geometry)+'\\" >> /etc/sysconfig/vncservers')
+    Execute('echo "'+str(params.vnc_password)+'\n'+str(params.vnc_password)+'\n\n" | vncpasswd')
     Execute('echo "Desktop install complete" >> '+params.log_location)
     
     if params.install_mvn:
