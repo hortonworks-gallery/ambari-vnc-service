@@ -54,8 +54,8 @@
  
   <property>
     <name>install.spark</name>
-    <value>true</value>
-    <description>Should Spark 1.2.0 TP also be installed?</description>
+    <value>false</value>
+    <description>Should Spark 1.2.0 TP also be installed? Only needed on HDP 2.2 as HDP 2.2.4 onwards comes with Spark installed</description>
  </property>
  
   <property>
