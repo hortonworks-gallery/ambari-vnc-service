@@ -80,7 +80,7 @@ curl -u admin:$PASSWORD -i -H 'X-Requested-By: ambari' -X PUT -d '{"RequestInfo"
 
 ###### Connect via VNC client 
 
-- Option 1: install [Chicken of the VNC](http://sourceforge.net/projects/chicken/) client on your Mac and use it to connect
+- Option 1: install [Chicken of the VNC](http://sourceforge.net/projects/chicken/) client on your Mac and use it to connect. On windows you can also install [Tight VNC](http://www.tightvnc.com/) or [UltraVNC](http://www.uvnc.com/) clients to do the same.
 ![Image](../master/screenshots/screenshot-vnc-clientsetup.png?raw=true)
 - Note that:
    
