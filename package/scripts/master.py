@@ -8,7 +8,7 @@ class Master(Script):
     result = self.read_passwdfile()
     for data in result:
       (username, encrypwd, uid, gid, gecos, homedir, usershell) = data.split(':')
-      if user == username and username not in ignore:
+      if user == username:
         return homedir
 
   def read_passwdfile(self):
