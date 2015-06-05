@@ -35,6 +35,7 @@
             </osSpecifics>
       	    <configuration-dependencies>
         	<config-type>vnc-config</config-type>
+        	<config-type>vnc-env</config-type>        	
       	    </configuration-dependencies>
             <restartRequiredAfterChange>false</restartRequiredAfterChange>
         </service>
