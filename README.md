@@ -12,6 +12,7 @@ Also includes the option to install the [Spark 1.2.0 Tech Preview](http://horton
 - [Getting started with Eclipse/IntelliJ](https://github.com/abajwa-hw/vnc-stack#getting-started-with-eclipseintellij)
 - [Getting started with Storm and Maven in Eclipse environment on HDP](https://github.com/abajwa-hw/vnc-stack#getting-started-with-storm-and-maven-in-eclipse-environment)
 - [Getting started with Spark TP on HDP](https://github.com/abajwa-hw/vnc-stack#getting-started-with-spark-tp-on-hdp)
+- [Getting started with Data science with Zeppelin on HDP](https://github.com/abajwa-hw/vnc-stack#getting-started-with-zeppelin-on-hdp)
 - [Getting started with Data science with iPython on HDP](https://github.com/abajwa-hw/vnc-stack#getting-started-with-ipython-notebook-on-hdp)
 
 ----------------------
@@ -163,7 +164,7 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
   - The first time you do this, it will ask you for the configuration:
     - Under ‘Goals’: clean install
     - Under Maven Runtime, add your existing mvn install on the sandbox (its faster than using the embedded one)
-    - Configure > Add > click ‘Directory’ and navigate to the dir where you installed mvn (e.g. /usr/share/maven/latest)
+    - Configure > Add > click ‘Directory’ and navigate to the dir where it installed mvn (i.e. /usr/share/apache-maven)
 ![Image](../master/screenshots/screeshot-eclipse-mvn.png?raw=true)
     
 - Eclipse should now be able to run a mvn compile and create the uber jar
@@ -190,9 +191,22 @@ storm jar ./target/storm-test-1.0-SNAPSHOT.jar test.HiveTopology
 
 -------------------
 
+
+#### Getting started with Zeppelin on HDP
+
+- Install Zeppelin service from [here](https://github.com/abajwa-hw/zeppelin-stack)
+
+- Open the notebook from http://sandbox.hortonworks.com:9995 and run though the example notebooks
+
+![Image](https://raw.githubusercontent.com/abajwa-hw/zeppelin-stack/master/screenshots/4.png)
+
+-------------------
+
 #### Getting started with iPython Notebook on HDP
 
 - Install iPython notebook service using instructions [here](https://github.com/randerzander/ipython-stack). 
+
+![Image](https://raw.githubusercontent.com/randerzander/jupyter-service/master/screenshots/wordCount.png)
 
 - Setup the [airline demo](https://github.com/abajwa-hw/hdp-datascience-demo) in iPython using steps below:
 
