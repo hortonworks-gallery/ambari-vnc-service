@@ -99,13 +99,30 @@ class Master(Script):
         Execute('echo "/usr/idea-IC-*/bin/idea.sh" >> ~/Desktop/intellij.sh')
         Execute('chmod 755 ~/Desktop/intellij.sh')
 
+   
+				
   def status(self, env):
     import params
-    home_dir = Execute('cat `echo ~'+params.vnc_user+'`/.vnc/*.pid')
+    home_dir = get_homedir(params.vnc_user)
     pid_file = glob.glob(home_dir + '/.vnc/*.pid')[0]
-    #check_process_status(pid_file)     
-    Execute('service vncserver status')
+    check_process_status(pid_file)     
+    #Execute('service vncserver status')
 
+
+  def get_homedir(self, user):
+    result = self.read_passwdfile()
+    for data in result:
+      (username, encrypwd, uid, gid, gecos, homedir, usershell) = data.split(':')
+      if user == username and username not in ignore:
+        return homedir
+
+  def read_passwdfile(self):
+    passwdfile = open('/etc/passwd', 'r')
+    data = []
+    for i in passwdfile.readlines():
+      data.append(i[:-1]) #remove trailing '\n'
+    passwdfile.close()
+    return data     
 
 if __name__ == "__main__":
   Master().execute()
