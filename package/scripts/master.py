@@ -63,7 +63,7 @@ class Master(Script):
     self.configure(env) 
     Execute('/sbin/service   vncserver stop')
     Execute('rm -f /var/lock/subsys/Xvnc', ignore_failures=True)      
-    Execute('rm -f /tmp/.X1-lock', ignore_failures=True)      
+    Execute('rm -f /tmp/.X*', ignore_failures=True)      
     
       
   def start(self, env):
@@ -71,7 +71,7 @@ class Master(Script):
     self.configure(env)
     
     Execute('rm -f /var/lock/subsys/Xvnc', ignore_failures=True)
-    Execute('rm -f /tmp/.X1-lock', ignore_failures=True)      
+    Execute('rm -f /tmp/.X*', ignore_failures=True)      
     
     Execute('/sbin/service   vncserver start')
     time.sleep(5)
