@@ -77,7 +77,7 @@ class Master(Script):
     
 
   def stop(self, env):
-    self.configure(env) 
+    #self.configure(env) 
     Execute('service vncserver stop')
     Execute('rm -f /var/lock/subsys/Xvnc', ignore_failures=True)      
     Execute('rm -f /tmp/.X*', ignore_failures=True)      

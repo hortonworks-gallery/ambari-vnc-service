@@ -13,7 +13,7 @@
     <name>vnc.password</name>
     <value></value>
     <property-type>PASSWORD</property-type>
-    <description>VNC password</description>
+    <description>VNC password. Must be at least 6 characters</description>
  </property>
   <property>
     <name>vnc.geometry</name>
