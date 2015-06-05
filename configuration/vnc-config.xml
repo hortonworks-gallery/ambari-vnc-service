@@ -6,7 +6,7 @@
  <property>
     <name>vnc.user</name>
     <value>root</value>
-    <description>VNC user</description>
+    <description>VNC user e.g. root</description>
  </property>
  
  <property require-input="true">
@@ -18,7 +18,7 @@
   <property>
     <name>vnc.geometry</name>
     <value>1400x860</value>
-    <description>VNC screen geometry/resolution</description>
+    <description>VNC screen geometry/resolution e.g. 1400x860</description>
  </property>
   <property>
     <name>log.file</name>
