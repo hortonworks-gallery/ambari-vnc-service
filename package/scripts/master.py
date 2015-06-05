@@ -73,8 +73,8 @@ class Master(Script):
     Execute('rm -rf /var/lock/subsys/Xvnc', ignore_failures=True)
     Execute('rm -rf /tmp/.X*', ignore_failures=True)      
     
-    home_dir = Execute('cat `echo ~'+params.vnc_user+'`/.vnc/*.pid')
-    Execute('echo home_dir: ' + home_dir)
+    home_dir = Execute('echo ~'+params.vnc_user)
+    Execute('echo home_dir: ' + str(home_dir))
     
     pid_file = glob.glob(home_dir + '/.vnc/*.pid')[0]
     Execute('echo pid_file: ' + pid_file)
