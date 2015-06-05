@@ -12,7 +12,7 @@ class Master(Script):
 
     Execute('echo "installing Desktop" >> '+params.log_location)
     Execute('yum groupinstall -y Desktop >> '+params.log_location)
-    Execute('mv /etc/sysconfig/vncservers /etc/sysconfig/vncservers.bak >> '+params.log_location)
+    Execute('mv /etc/sysconfig/vncservers /etc/sysconfig/vncservers.bak >> '+params.log_location, ignore_failures=True)
 
     self.configure(env)
     Execute('echo "Desktop install complete" >> '+params.log_location)
