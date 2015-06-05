@@ -70,8 +70,8 @@ class Master(Script):
     import params
     self.configure(env)
     
-    Execute('rm -f /var/lock/subsys/Xvnc', ignore_failures=True)
-    Execute('rm -f /tmp/.X*', ignore_failures=True)      
+    Execute('rm -rf /var/lock/subsys/Xvnc', ignore_failures=True)
+    Execute('rm -rf /tmp/.X*', ignore_failures=True)      
     
     Execute('/sbin/service   vncserver start')
     time.sleep(5)
