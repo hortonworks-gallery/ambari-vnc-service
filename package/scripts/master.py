@@ -3,7 +3,8 @@ from resource_management import *
 from subprocess import call
 
 class Master(Script):
-
+  pid_file = ''
+  
   def get_homedir(self, user):
     result = self.read_passwdfile()
     for data in result:
@@ -66,7 +67,11 @@ class Master(Script):
   def configure(self, env):
     import params
     env.set_params(params)
-
+    
+    home_dir = self.get_homedir(params.vnc_user)
+    Master.pid_file = glob.glob(home_dir + '/.vnc/*.pid')[0]
+    Execute('echo pid_file: ' + Master.pid_file)
+    
     #write out contents
     content=InlineTemplate(params.template_config)    
     File(format("/etc/sysconfig/vncservers"), content=content, owner='root',group='root', mode=0644)
@@ -88,12 +93,6 @@ class Master(Script):
     
     Execute('rm -rf /var/lock/subsys/Xvnc', ignore_failures=True)
     Execute('rm -rf /tmp/.X*', ignore_failures=True)      
-    
-    home_dir = self.get_homedir(params.vnc_user)
-    Execute('echo home_dir: ' + str(home_dir))
-    
-    pid_file = glob.glob(home_dir + '/.vnc/*.pid')[0]
-    Execute('echo pid_file: ' + pid_file)
         
     Execute('service vncserver start')
     time.sleep(5)
@@ -118,9 +117,7 @@ class Master(Script):
 				
   def status(self, env):
     import params
-    home_dir = get_homedir(params.vnc_user)
-    pid_file = glob.glob(home_dir + '/.vnc/*.pid')[0]
-    check_process_status(pid_file)     
+    check_process_status(Master.pid_file)     
     #Execute('service vncserver status')
 
 
