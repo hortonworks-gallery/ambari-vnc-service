@@ -2,6 +2,13 @@
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
  
 <configuration>
+
+ <property>
+    <name>vnc.user</name>
+    <value>root</value>
+    <description>VNC user</description>
+ </property>
+ 
  <property require-input="true">
     <name>vnc.password</name>
     <value></value>
@@ -47,15 +54,9 @@
  </property>
  
   <property>
-    <name>mvn.location</name>
-    <value>http://mirrors.koehn.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz</value>
-    <description>Location to pull Maven bits from</description>
- </property>
- 
-  <property>
     <name>install.spark</name>
     <value>false</value>
-    <description>Should Spark 1.2.0 TP also be installed? Only needed on HDP 2.2 as HDP 2.2.4 onwards comes with Spark installed</description>
+    <description>Should Spark 1.2.0 TP also be installed? Only needed on HDP 2.2.0 as HDP 2.2.4 onwards comes with Spark 1.2.1 installed</description>
  </property>
  
   <property>

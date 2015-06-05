@@ -6,29 +6,21 @@ class Master(Script):
   def install(self, env):
     # Install packages listed in metainfo.xml
     self.install_packages(env)
-    self.configure(env)
+
     import params
 
-
-    #params.log_location
 
     Execute('echo "installing Desktop" >> '+params.log_location)
     Execute('yum groupinstall -y Desktop >> '+params.log_location)
     Execute('mv /etc/sysconfig/vncservers /etc/sysconfig/vncservers.bak >> '+params.log_location)
-    Execute('echo VNCSERVERS=\\"1:root\\" > /etc/sysconfig/vncservers')
-    Execute('echo VNCSERVERARGS[1]=\\"-geometry '+str(params.vnc_geometry)+'\\" >> /etc/sysconfig/vncservers')
-    Execute('echo "'+str(params.vnc_password)+'\n'+str(params.vnc_password)+'\n\n" | vncpasswd')
+
+    self.configure(env)
     Execute('echo "Desktop install complete" >> '+params.log_location)
     
     if params.install_mvn:
         Execute('echo "Installing mvn..." >> '+params.log_location)      
-        Execute('mkdir /usr/share/maven')
-        Execute('wget '+params.mvn_location+' -O /usr/share/maven/maven.tar.gz  >> '+params.log_location)
-        Execute('tar xvzf /usr/share/maven/maven.tar.gz -C /usr/share/maven  >> '+params.log_location)
-        Execute('ln -s /usr/share/maven/apache-maven-*/ /usr/share/maven/latest')
-        Execute("echo 'M2_HOME=/usr/share/maven/latest' >> ~/.bashrc")
-        Execute("echo 'M2=$M2_HOME/bin' >> ~/.bashrc")
-        Execute("echo 'PATH=$PATH:$M2' >> ~/.bashrc")
+        Execute('curl -o /etc/yum.repos.d/epel-apache-maven.repo https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo')
+        Execute('yum -y install apache-maven >> '+params.log_location)      
         Execute("echo maven install complete  >> "+params.log_location)         
 
     if params.install_eclipse:
@@ -59,6 +51,14 @@ class Master(Script):
     import params
     env.set_params(params)
 
+    #write out contents
+    content=InlineTemplate(params.template_config)    
+    File(format("/etc/sysconfig/vncservers"), content=content, owner='root',group='root', mode=0644)
+    
+    #set vnc password
+    Execute('echo "'+str(params.vnc_password)+'\n'+str(params.vnc_password)+'\n\n" | vncpasswd')
+    
+
   def stop(self, env):
     Execute('/sbin/service   vncserver stop')
       
@@ -79,7 +79,7 @@ class Master(Script):
         #create Desktop dir if it does not exist
         if not os.path.exists(desktop):
             os.makedirs(desktop)
-        Execute('echo "export JAVA_HOME=/usr/jdk64/jdk1.7.0_67" > ~/Desktop/intellij.sh')
+        Execute('echo "export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk.x86_64" > ~/Desktop/intellij.sh')
         Execute('echo "/usr/idea-IC-*/bin/idea.sh" >> ~/Desktop/intellij.sh')
         Execute('chmod 755 ~/Desktop/intellij.sh')
 
