@@ -60,10 +60,13 @@ class Master(Script):
     
 
   def stop(self, env):
-    Execute('/sbin/service   vncserver stop')
+      self.configure(env) 
+      Execute('/sbin/service   vncserver stop')
       
   def start(self, env):
     import params
+    self.configure(env)
+    
     Execute('/sbin/service   vncserver start')
     time.sleep(5)
     desktop = '/root/Desktop'
