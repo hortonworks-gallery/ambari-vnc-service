@@ -2,7 +2,7 @@
 An Ambari Stack service package for VNC Server with the ability to install developer tools like Eclipse/IntelliJ/Maven as well to 'remote desktop' to the sandbox and quickly start developing on HDP Hadoop.
 Also includes the option to install the [Spark 1.2.0 Tech Preview](http://hortonworks.com/hadoop-tutorial/using-apache-spark-hdp/)
 
-Author: Ali Bajwa
+Author: [Ali Bajwa](https://www.linkedin.com/in/aliabajwa)
 
 ##### Contents
 
