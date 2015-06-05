@@ -69,6 +69,7 @@ class Master(Script):
     env.set_params(params)
     
     home_dir = self.get_homedir(params.vnc_user)
+    Execute('echo home_dir: ' + home_dir)
     Master.pid_file = glob.glob(home_dir + '/.vnc/*.pid')[0]
     Execute('echo pid_file: ' + Master.pid_file)
     
