@@ -50,7 +50,7 @@ On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> 
 ![Image](../master/screenshots/screenshot-vnc-config.png?raw=true)
 
   - ~~Note that currently you cant change these configurations after installing the stack (this is WIP)~~
-  - To change the geometry you can edit this file /etc/sysconfig/vncservers
+  - ~~To change the geometry you can edit this file /etc/sysconfig/vncservers~~
   - You can also remove the stack using the steps below and re-install with correct settings
 - On successful deployment you will see the VNC service as part of Ambari stack and will be able to start/stop the service from here:
 ![Image](../master/screenshots/screenshot-vnc-stack.png?raw=true)
