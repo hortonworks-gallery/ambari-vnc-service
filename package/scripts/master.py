@@ -3,6 +3,22 @@ from resource_management import *
 from subprocess import call
 
 class Master(Script):
+
+  def get_homedir(self, user):
+    result = self.read_passwdfile()
+    for data in result:
+      (username, encrypwd, uid, gid, gecos, homedir, usershell) = data.split(':')
+      if user == username and username not in ignore:
+        return homedir
+
+  def read_passwdfile(self):
+    passwdfile = open('/etc/passwd', 'r')
+    data = []
+    for i in passwdfile.readlines():
+      data.append(i[:-1]) #remove trailing '\n'
+    passwdfile.close()
+    return data 
+    
   def install(self, env):
     # Install packages listed in metainfo.xml
     self.install_packages(env)
@@ -73,7 +89,7 @@ class Master(Script):
     Execute('rm -rf /var/lock/subsys/Xvnc', ignore_failures=True)
     Execute('rm -rf /tmp/.X*', ignore_failures=True)      
     
-    home_dir = get_homedir(params.vnc_user)
+    home_dir = self.get_homedir(params.vnc_user)
     Execute('echo home_dir: ' + str(home_dir))
     
     pid_file = glob.glob(home_dir + '/.vnc/*.pid')[0]
@@ -108,20 +124,7 @@ class Master(Script):
     #Execute('service vncserver status')
 
 
-  def get_homedir(self, user):
-    result = self.read_passwdfile()
-    for data in result:
-      (username, encrypwd, uid, gid, gecos, homedir, usershell) = data.split(':')
-      if user == username and username not in ignore:
-        return homedir
-
-  def read_passwdfile(self):
-    passwdfile = open('/etc/passwd', 'r')
-    data = []
-    for i in passwdfile.readlines():
-      data.append(i[:-1]) #remove trailing '\n'
-    passwdfile.close()
-    return data     
+    
 
 if __name__ == "__main__":
   Master().execute()
