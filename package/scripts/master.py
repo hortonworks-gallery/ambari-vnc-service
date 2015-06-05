@@ -118,8 +118,10 @@ class Master(Script):
 				
   def status(self, env):
     import params
-    check_process_status(Master.pid_file)     
-    #Execute('service vncserver status')
+    #seem it does not like the pid file (perhaps due to special chars e.g. /root/.vnc/sandbox.hortonworks.com:1.pid)
+    #check_process_status(Master.pid_file)     
+    
+    Execute('service vncserver status')
 
 
     
