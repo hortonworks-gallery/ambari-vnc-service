@@ -73,6 +73,12 @@ class Master(Script):
     Execute('rm -rf /var/lock/subsys/Xvnc', ignore_failures=True)
     Execute('rm -rf /tmp/.X*', ignore_failures=True)      
     
+    home_dir = Execute('cat `echo ~'+params.vnc_user+'`/.vnc/*.pid')
+    Execute('echo home_dir: ' + home_dir)
+    
+    pid_file = glob.glob(home_dir + '/.vnc/*.pid')[0]
+    Execute('echo pid_file: ' + pid_file)
+        
     Execute('service vncserver start')
     time.sleep(5)
     desktop = '/root/Desktop'
@@ -93,6 +99,10 @@ class Master(Script):
         Execute('chmod 755 ~/Desktop/intellij.sh')
 
   def status(self, env):
+    import params
+    home_dir = Execute('cat `echo ~'+params.vnc_user+'`/.vnc/*.pid')
+    pid_file = glob.glob(home_dir + '/.vnc/*.pid')[0]
+    #check_process_status(pid_file)     
     Execute('service vncserver status')
 
 
