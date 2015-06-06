@@ -1,12 +1,13 @@
-#### Developer Quickstart on HDP Sandbox using Ambari Stacks
-An Ambari Stack service package for VNC Server with the ability to install developer tools like Eclipse/IntelliJ/Maven as well to 'remote desktop' to the sandbox and quickly start developing on HDP Hadoop.
+#### Developer Quickstart on HDP Sandbox using Ambari VNC service
+
+An Ambari service package for VNC Server with the ability to install developer tools like Eclipse/IntelliJ/Maven as well to 'remote desktop' to the sandbox and quickly start developing on HDP Hadoop.
 Also includes the option to install the [Spark 1.2.0 Tech Preview](http://hortonworks.com/hadoop-tutorial/using-apache-spark-hdp/)
 
 Author: [Ali Bajwa](https://www.linkedin.com/in/aliabajwa)
 
 ##### Contents
 
-- [Setup VNC stack](https://github.com/abajwa-hw/vnc-stack#setup-vnc-stack)
+- [Setup VNC service](https://github.com/abajwa-hw/vnc-stack#setup-vnc-service)
 - [Connect to VNC](https://github.com/abajwa-hw/vnc-stack#connect-to-vnc-server)
   - [Connect via VNC client](https://github.com/abajwa-hw/vnc-stack#connect-via-vnc-client)
   - [Connect via browser](https://github.com/abajwa-hw/vnc-stack#connect-via-browser)
@@ -19,7 +20,7 @@ Author: [Ali Bajwa](https://www.linkedin.com/in/aliabajwa)
 
 ----------------------
 
-##### Setup VNC stack
+##### Setup VNC service
 
 - Download HDP 2.2 sandbox VM image (Sandbox_HDP_2.2_VMware.ova) from [Hortonworks website](http://hortonworks.com/products/hortonworks-sandbox/)
 - Import Sandbox_HDP_2.2_VMware.ova into VMWare and set the VM memory size to 8GB
@@ -34,7 +35,7 @@ ssh root@sandbox.hortonworks.com
 /root/start_ambari.sh
 ```
 
-- To deploy the VNC stack, run below
+- To deploy the VNC service, run below
 ```
 cd /var/lib/ambari-server/resources/stacks/HDP/2.2/services
 git clone https://github.com/abajwa-hw/vnc-stack.git   
@@ -52,10 +53,10 @@ sudo service ambari-server restart
 On bottom left -> Actions -> Add service -> check VNC Server -> Next -> Next -> Enter password -> Next -> Deploy
 ![Image](../master/screenshots/screenshot-vnc-config.png?raw=true)
 
-  - ~~Note that currently you cant change these configurations after installing the stack (this is WIP)~~
+  - ~~Note that currently you cant change these configurations after installing the service (this is WIP)~~
   - ~~To change the geometry you can edit this file /etc/sysconfig/vncservers~~
-  - You can also remove the stack using the steps below and re-install with correct settings
-- On successful deployment you will see the VNC service as part of Ambari stack and will be able to start/stop the service from here:
+  - You can also remove the service using the steps below and re-install with correct settings
+- On successful deployment you will see the VNC service as part of Ambari service and will be able to start/stop the service from here:
 ![Image](../master/screenshots/screenshot-vnc-stack.png?raw=true)
 
 - When you've completed the install process, VNC server will be available at your VM's IP on display 1 with the password you setup.
