@@ -202,7 +202,9 @@ storm jar ./target/storm-test-1.0-SNAPSHOT.jar test.HiveTopology
 
 ![Image](https://raw.githubusercontent.com/abajwa-hw/zeppelin-stack/master/screenshots/4.png)
 
+
 -------------------
+
 
 #### Getting started with iPython Notebook on HDP
 
