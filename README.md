@@ -184,8 +184,9 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
     - Under Maven Runtime: (scroll down to see this option) add your existing mvn install on the sandbox (its faster than using the embedded one)
     ![Image](../master/screenshots/configure-maven-install.png?raw=true)
     - Configure > Add > click ‘Directory’ and navigate to the dir where it installed mvn (i.e. /usr/share/apache-maven)
-    - Run
+    - So now your maven run configuration should look as below
     ![Image](../master/screenshots/maven-run-configuration.png?raw=true)
+    - Click Run to start compile
     
 - Eclipse should now be able to run a mvn compile and create the uber jar
 
