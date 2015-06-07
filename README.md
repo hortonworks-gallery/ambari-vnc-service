@@ -176,18 +176,29 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
 
 - The eclipse project should build on its own and not show errors (if not, you may need to add jars to the project properties)
 
-- To run maven compile: Run > Run as > Maven Build
+- To run maven compile: Run > Run Configurations > Maven Build
   - The first time you do this, it will ask you for the configuration:
+    - Name: specify anything (e.g. streaming)
+    - Base dir: base dir of source code (e.g. /root/hdp22-hive-streaming or /opt/TruckEvents/Tutorials-master)
     - Under ‘Goals’: clean install
-    - Under Maven Runtime, add your existing mvn install on the sandbox (its faster than using the embedded one)
+    - Under Maven Runtime: (scroll down to see this option) add your existing mvn install on the sandbox (its faster than using the embedded one)
+    ![Image](../master/screenshots/configure-maven-install.png?raw=true)
     - Configure > Add > click ‘Directory’ and navigate to the dir where it installed mvn (i.e. /usr/share/apache-maven)
-![Image](../master/screenshots/screeshot-eclipse-mvn.png?raw=true)
+    - Run
+    ![Image](../master/screenshots/maven-run-configuration.png?raw=true)
     
 - Eclipse should now be able to run a mvn compile and create the uber jar
 
-- Now from terminal, run your topology:
+- Now from terminal, run your topology as you normally would, for example:
+  - For trucking demo tutorial:
 ```
-source ~/.bashrc
+cd /opt/TruckEvents/Tutorials-master/
+storm jar target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial2.TruckEventProcessingTopology
+storm jar target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial3.TruckEventProcessingTopology
+```    
+
+  - For Twitter topology
+```
 cd /root/hdp22-hive-streaming
 storm jar ./target/storm-test-1.0-SNAPSHOT.jar test.HiveTopology
 ```    
