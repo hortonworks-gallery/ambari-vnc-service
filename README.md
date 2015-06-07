@@ -153,7 +153,7 @@ curl -u admin:$PASSWORD -i -H 'X-Requested-By: ambari' -X PUT -d '{"RequestInfo"
 ```
 mkdir /opt/TruckEvents  
 cd /opt/TruckEvents  
-wget http://hortonassets.s3.amazonaws.com/mda/Tutorials-master.zip  
+wget https://www.dropbox.com/s/7gk1u3khrfaz3tu/Tutorials-master.zip  
 unzip Tutorials-master.zip
 ```
 
