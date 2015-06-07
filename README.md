@@ -147,7 +147,17 @@ curl -u admin:$PASSWORD -i -H 'X-Requested-By: ambari' -X PUT -d '{"RequestInfo"
 
 #### Getting started with Storm and Maven in Eclipse environment
 
-- As a next step, try setting up the Twitter storm topology project in Eclipse to become familiar with how it works.
+- As a next step, try setting up streaming samples like the [trucking demo tutorials](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/) or the [Twitter storm topology](https://github.com/abajwa-hw/hdp22-hive-streaming.git) project in Eclipse to become familiar with how it works.
+
+- Optional 1: Download code for trucking demo tutorials
+```
+mkdir /opt/TruckEvents  
+cd /opt/TruckEvents  
+wget http://hortonassets.s3.amazonaws.com/mda/Tutorials-master.zip  
+unzip Tutorials-master.zip
+```
+
+- Option 2: Download code for sample Twitter storm topology
 You can get the sample code by running "git clone" from your repo (git already installed on sandbox)
 ```
 cd /root
@@ -156,10 +166,13 @@ git clone https://github.com/abajwa-hw/hdp22-hive-streaming.git
 - You will need to complete the pre-requisites mentioned (i.e. install mvn, enable Hive transactions, create Hive table) [here](https://github.com/abajwa-hw/hdp22-hive-streaming#step-4-import-tweets-for-users-into-hive-orc-table-via-storm).
 
 - Once you already have your storm code on the VM, just import the dir containing the pom.xml into Eclipse:
-File > Import > Existing Maven Projects > navigate to your code (e.g. /root/hdp22-hive-streaming)  > OK
+File > Import > Maven > Existing Maven Projects > Browse > navigate to your code (e.g. /root/hdp22-hive-streaming or /opt/TruckEvents/Tutorials-master)  > OK
 
-- Check the java compiler is using 1.7:
-File > Properties > Java Compiler > uncheck "use compliance from..." > set "Compiler compliance level" to 1.7 > OK
+This will start building the project and importing the maven jars which may run for a few minutes. You will see errors in the project because the correct java version was not picked up.
+
+- Check the java compiler is using 1.7. After highlighting the project:
+File > Properties > Java Compiler > uncheck "use compliance from..." > set "Compiler compliance level" to 1.7 > Yes > OK
+![Image](../master/screenshots/eclipse-jdk-properties.png?raw=true)
 
 - The eclipse project should build on its own and not show errors (if not, you may need to add jars to the project properties)
 
