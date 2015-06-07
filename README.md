@@ -162,8 +162,35 @@ You can get the sample code by running "git clone" from your repo (git already i
 ```
 cd /root
 git clone https://github.com/abajwa-hw/hdp22-hive-streaming.git 
+cd /root/hdp22-hive-streaming
 ```
-- You will need to complete the pre-requisites mentioned (i.e. install mvn, enable Hive transactions, create Hive table) [here](https://github.com/abajwa-hw/hdp22-hive-streaming#step-4-import-tweets-for-users-into-hive-orc-table-via-storm).
+- You will need to complete the pre-requisites mentioned (i.e. install mvn, create Hive table etc) [here](https://github.com/abajwa-hw/hdp22-hive-streaming#step-4-import-tweets-for-users-into-hive-orc-table-via-storm).
+```
+#update your twitter keys in this file
+vi src/test/HiveTopology.java
+
+#install maven (if not already installed)
+curl -o /etc/yum.repos.d/epel-apache-maven.repo https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo
+yum -y install apache-maven
+
+#Create persons table in Mysql
+mysql -u root -p
+#empty password
+
+create database people;
+use people;
+create table persons (people_id INT PRIMARY KEY, sex text, bdate DATE, firstname text, lastname text, addresslineone text, addresslinetwo text, city text, postalcode text, ssn text, id2 text, email text, id3 text);
+LOAD DATA LOCAL INFILE '~/hdp22-hive-streaming/data/PII_data_small.csv' REPLACE INTO TABLE persons FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+exit;
+
+#import persons table into Hive using Sqoop
+sqoop import --verbose --connect 'jdbc:mysql://localhost/people' --table persons --username root --hcatalog-table persons --hcatalog-storage-stanza "stored as orc" -m 1 --create-hcatalog-table 
+
+#create user_tweets table in Hive
+hive -e 'create table if not exists user_tweets (twitterid string, userid int, displayname string, created string, language string, tweet string) clustered by (userid) into 7 buckets stored as orc tblproperties("orc.compress"="NONE","transactional"="true")'
+sudo -u hdfs hadoop fs -chmod +w /apps/hive/warehouse/user_tweets
+
+```
 
 - Once you already have your storm code on the VM, just import the dir containing the pom.xml into Eclipse:
 File > Import > Maven > Existing Maven Projects > Browse > navigate to your code (e.g. /root/hdp22-hive-streaming or /opt/TruckEvents/Tutorials-master)  > OK
@@ -201,7 +228,15 @@ storm jar target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial3.T
   - For Twitter topology
 ```
 cd /root/hdp22-hive-streaming
-storm jar ./target/storm-test-1.0-SNAPSHOT.jar test.HiveTopology
+
+#sumbit topology
+storm jar ./target/storm-integration-test-1.0-SNAPSHOT.jar test.HiveTopology thrift://sandbox.hortonworks.com:9083 default user_tweets twitter_topology
+
+#check user_tweets hive table
+hive -e 'select * from user_tweets'
+
+#stop topology
+storm kill twitter_topology
 ```    
 
 -----------------
