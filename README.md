@@ -215,7 +215,11 @@ storm jar ./target/storm-test-1.0-SNAPSHOT.jar test.HiveTopology
 
 - Follow the rest of the examples from the Spark 1.2 on Yarn TP: http://hortonworks.com/hadoop-tutorial/using-apache-spark-hdp/
 
+- You can also try the official tutorials [here](http://hortonworks.com/tutorials/)
 
+- Try the code samples from our techical webinars on Spark:
+http://hortonworks.com/partners/learn/#spark
+http://hortonworks.com/partners/learn/#ml2
 
 -------------------
 
