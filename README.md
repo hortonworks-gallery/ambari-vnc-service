@@ -41,10 +41,10 @@ sudo git clone https://github.com/hortonworks-gallery/ambari-vnc-service.git   /
 ```
 - Restart Ambari
 ```
-#on HDP 2.2 sandbox
+#on sandbox
 sudo service ambari restart
 
-#on other HDP 2.2 setups
+#on non-sandbox
 sudo service ambari-server restart
 ```
 - Then you can click on 'Add Service' from the 'Actions' dropdown menu in the bottom left of the Ambari dashboard:
