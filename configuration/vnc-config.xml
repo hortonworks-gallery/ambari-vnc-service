@@ -43,7 +43,7 @@
  </property>
   <property>
     <name>intellij.location</name>
-    <value>http://download-cf.jetbrains.com/idea/ideaIC-14.0.2.tar.gz</value>
+    <value>https://d1opms6zj7jotq.cloudfront.net/idea/ideaIC-14.1.4.tar.gz</value>
     <description>Location to pull IntelliJ bits from</description>
  </property>
   
@@ -56,7 +56,7 @@
   <property>
     <name>install.spark</name>
     <value>false</value>
-    <description>Should Spark 1.2.0 TP also be installed? Only needed on HDP 2.2.0 as HDP 2.2.4 onwards comes with Spark 1.2.1 installed</description>
+    <description>Should Spark 1.2.0 TP also be installed? Only needed on HDP 2.2.0 and earlier. HDP 2.2.4 onwards comes with Spark 1.2.1 installed</description>
  </property>
  
   <property>
