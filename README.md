@@ -197,8 +197,10 @@ cd /root/hdp22-hive-streaming
   sudo -u hdfs hadoop fs -chmod +w /apps/hive/warehouse/user_tweets
   ```
 
+- For all 3 options, follow steps below for next steps...
+
 - Once you already have your storm code on the VM, just import the dir containing the pom.xml into Eclipse:
-File > Import > Maven > Existing Maven Projects > Browse > navigate to your dir containing pom.xml (e.g. /root/hdp22-twitter-demo/stormtwitter-mvn or /root/hdp22-hive-streaming or /opt/TruckEvents/Tutorials-master)  > OK
+File > Import > Maven > Existing Maven Projects > Browse > navigate to your dir containing pom.xml (e.g. /opt/TruckEvents/Tutorials-master or **/root/hdp22-twitter-demo/stormtwitter-mvn** or /root/hdp22-hive-streaming)  > OK
 
 This will start building the project and importing the maven jars which may run for a few minutes. You will see errors in the project because the correct java version was not picked up.
 
