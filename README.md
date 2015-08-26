@@ -7,16 +7,16 @@ Author: [Ali Bajwa](https://www.linkedin.com/in/aliabajwa)
 
 ##### Contents
 
-- [Setup VNC service](https://github.com/abajwa-hw/vnc-stack#setup-vnc-service)
-- [Connect to VNC](https://github.com/abajwa-hw/vnc-stack#connect-to-vnc-server)
-  - [Connect via VNC client](https://github.com/abajwa-hw/vnc-stack#connect-via-vnc-client)
-  - [Connect via browser](https://github.com/abajwa-hw/vnc-stack#connect-via-browser)
-  - [Connect via Ambari view](https://github.com/abajwa-hw/vnc-stack#connect-via-ambari-view)  
-- [Getting started with Eclipse/IntelliJ](https://github.com/abajwa-hw/vnc-stack#getting-started-with-eclipseintellij)
-- [Getting started with Storm and Maven in Eclipse environment on HDP](https://github.com/abajwa-hw/vnc-stack#getting-started-with-storm-and-maven-in-eclipse-environment)
-- [Getting started with Spark TP on HDP](https://github.com/abajwa-hw/vnc-stack#getting-started-with-spark-tp-on-hdp)
-- [Getting started with Data science with Zeppelin on HDP](https://github.com/abajwa-hw/vnc-stack#getting-started-with-zeppelin-on-hdp)
-- [Getting started with Data science with iPython on HDP](https://github.com/abajwa-hw/vnc-stack#getting-started-with-ipython-notebook-on-hdp)
+- [Setup VNC service](https://github.com/hortonworks-gallery/ambari-vnc-service#setup-vnc-service)
+- [Connect to VNC](https://github.com/hortonworks-gallery/ambari-vnc-service#connect-to-vnc-server)
+  - [Connect via VNC client](https://github.com/hortonworks-gallery/ambari-vnc-service#connect-via-vnc-client)
+  - [Connect via browser](https://github.com/hortonworks-gallery/ambari-vnc-service#connect-via-browser)
+  - [Connect via Ambari view](https://github.com/hortonworks-gallery/ambari-vnc-service#connect-via-ambari-view)  
+- [Getting started with Eclipse/IntelliJ](https://github.com/hortonworks-gallery/ambari-vnc-service#getting-started-with-eclipseintellij)
+- [Getting started with Storm and Maven in Eclipse environment on HDP](https://github.com/hortonworks-gallery/ambari-vnc-service#getting-started-with-storm-and-maven-in-eclipse-environment)
+- [Getting started with Spark TP on HDP](https://github.com/hortonworks-gallery/ambari-vnc-service#getting-started-with-spark-tp-on-hdp)
+- [Getting started with Data science with Zeppelin on HDP](https://github.com/hortonworks-gallery/ambari-vnc-service#getting-started-with-zeppelin-on-hdp)
+- [Getting started with Data science with iPython on HDP](https://github.com/hortonworks-gallery/ambari-vnc-service#getting-started-with-ipython-notebook-on-hdp)
 
 ----------------------
 
