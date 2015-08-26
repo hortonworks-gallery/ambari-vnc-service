@@ -211,7 +211,7 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
 - To run maven compile: Run > Run Configurations > Maven Build
   - The first time you do this, it will ask you for the configuration:
     - Name: specify anything (e.g. streaming)
-    - Base dir: base dir of source code (e.g. **/root/hdp22-twitter-demo/stormtwitter-mvn** or /root/hdp22-hive-streaming or /opt/TruckEvents/Tutorials-master)
+    - Base dir: base dir of source code (e.g. /opt/TruckEvents/Tutorials-master or **/root/hdp22-twitter-demo/stormtwitter-mvn** or /root/hdp22-hive-streaming)
     - Under ‘Goals’: clean install
     - Under Maven Runtime: (scroll down to see this option) add your existing mvn install on the sandbox (its faster than using the embedded one)
     ![Image](../master/screenshots/configure-maven-install.png?raw=true)
