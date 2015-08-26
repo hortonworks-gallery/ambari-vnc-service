@@ -146,7 +146,7 @@ curl -u admin:$PASSWORD -i -H 'X-Requested-By: ambari' -X PUT -d '{"RequestInfo"
 
 #### Getting started with Storm and Maven in Eclipse environment
 
-- As a next step, try setting up streaming samples like the [trucking demo tutorials](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/) or the [Twitter storm topology](https://github.com/abajwa-hw/hdp22-hive-streaming.git) project in Eclipse to become familiar with how it works.
+- As a next step, try setting up streaming samples like the [trucking demo tutorials](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/) or the [starter Twitter topology](https://github.com/abajwa-hw/hdp22-hive-streaming.git) or [Twitter IoT workshop](https://github.com/hortonworks-gallery/hdp22-twitter-demo) project in Eclipse to become familiar with how it works.
 
 - Optional 1: Download code for trucking demo tutorials
 ```
@@ -156,10 +156,17 @@ wget https://www.dropbox.com/s/7gk1u3khrfaz3tu/Tutorials-master.zip
 unzip Tutorials-master.zip
 ```
 
-- Option 2: Download code for sample Twitter storm topology
+- **Option 2: Download code for the Twitter IoT workshop topology**
 You can get the sample code by running "git clone" from your repo (git already installed on sandbox)
 ```
-cd /root
+cd
+git clone https://github.com/hortonworks-gallery/hdp22-twitter-demo.git 
+```
+
+- Option 3: Download code for starter Twitter storm topology
+You can get the sample code by running "git clone" from your repo (git already installed on sandbox)
+```
+cd 
 git clone https://github.com/abajwa-hw/hdp22-hive-streaming.git 
 cd /root/hdp22-hive-streaming
 ```
@@ -192,7 +199,7 @@ sudo -u hdfs hadoop fs -chmod +w /apps/hive/warehouse/user_tweets
 ```
 
 - Once you already have your storm code on the VM, just import the dir containing the pom.xml into Eclipse:
-File > Import > Maven > Existing Maven Projects > Browse > navigate to your code (e.g. /root/hdp22-hive-streaming or /opt/TruckEvents/Tutorials-master)  > OK
+File > Import > Maven > Existing Maven Projects > Browse > navigate to your dir containing pom.xml (e.g. /root/hdp22-twitter-demo/stormtwitter-mvn or /root/hdp22-hive-streaming or /opt/TruckEvents/Tutorials-master)  > OK
 
 This will start building the project and importing the maven jars which may run for a few minutes. You will see errors in the project because the correct java version was not picked up.
 
@@ -205,11 +212,11 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
 - To run maven compile: Run > Run Configurations > Maven Build
   - The first time you do this, it will ask you for the configuration:
     - Name: specify anything (e.g. streaming)
-    - Base dir: base dir of source code (e.g. /root/hdp22-hive-streaming or /opt/TruckEvents/Tutorials-master)
+    - Base dir: base dir of source code (e.g. **/root/hdp22-twitter-demo/stormtwitter-mvn** or /root/hdp22-hive-streaming or /opt/TruckEvents/Tutorials-master)
     - Under ‘Goals’: clean install
     - Under Maven Runtime: (scroll down to see this option) add your existing mvn install on the sandbox (its faster than using the embedded one)
     ![Image](../master/screenshots/configure-maven-install.png?raw=true)
-    - Configure > Add > click ‘Directory’ and navigate to the dir where it installed mvn (i.e. /usr/share/apache-maven)
+    - Configure > Add > click ‘Directory’ and navigate to the dir where it installed mvn (i.e. **/usr/share/apache-maven**)
     - So now your maven run configuration should look as below
     ![Image](../master/screenshots/maven-run-configuration.png?raw=true)
     - Click Run to start compile
@@ -224,7 +231,13 @@ storm jar target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial2.T
 storm jar target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial3.TruckEventProcessingTopology
 ```    
 
-  - For Twitter topology
+  - **For Twitter IoT workshop**
+```
+cd /root/hdp22-twitter-demo/stormtwitter-mvn
+storm jar ./target/storm-streaming-1.0-SNAPSHOT.jar hellostorm.GNstorm runLocally localhost
+```  
+
+  - For starter Twitter topology
 ```
 cd /root/hdp22-hive-streaming
 
