@@ -35,8 +35,10 @@ class Master(Script):
     Execute('echo "Desktop install complete" >> '+params.log_location)
     
     if params.install_mvn:
-        Execute('echo "Installing mvn..." >> '+params.log_location)      
-        Execute('curl -o /etc/yum.repos.d/epel-apache-maven.repo https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo')
+        Execute('echo "Installing mvn..." >> '+params.log_location)
+        mvn_repo='/etc/yum.repos.d/epel-apache-maven.repo'    
+        if not os.path.exists(mvn_repo):
+          Execute('curl -o '+mvn_repo+' https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo')
         Execute('yum -y install apache-maven >> '+params.log_location)      
         Execute("echo maven install complete  >> "+params.log_location)         
 
