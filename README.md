@@ -157,14 +157,12 @@ unzip Tutorials-master.zip
 ```
 
 - **Option 2: Download code for the Twitter IoT workshop topology**
-You can get the sample code by running "git clone" from your repo (git already installed on sandbox)
 ```
 cd
 git clone https://github.com/hortonworks-gallery/hdp22-twitter-demo.git 
 ```
 
 - Option 3: Download code for starter Twitter storm topology
-You can get the sample code by running "git clone" from your repo (git already installed on sandbox)
 ```
 cd 
 git clone https://github.com/abajwa-hw/hdp22-hive-streaming.git 
