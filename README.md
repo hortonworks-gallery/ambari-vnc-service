@@ -146,7 +146,7 @@ curl -u admin:$PASSWORD -i -H 'X-Requested-By: ambari' -X PUT -d '{"RequestInfo"
 
 #### Getting started with Storm and Maven in Eclipse environment
 
-- As a next step, try setting up streaming samples like the [**trucking demo tutorials**](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/) or the [Twitter IoT workshop](https://github.com/hortonworks-gallery/hdp22-twitter-demo) or the [starter Twitter topology](https://github.com/abajwa-hw/hdp22-hive-streaming.git) project in Eclipse to become familiar with how it works.
+- As a next step, try setting up streaming samples like the [trucking demo tutorial](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/) or the [**Twitter IoT workshop**](https://github.com/hortonworks-gallery/hdp22-twitter-demo) or the [starter Twitter topology](https://github.com/abajwa-hw/hdp22-hive-streaming.git) project in Eclipse to become familiar with how it works.
 
 - Optional 1: Download code for trucking demo tutorials
 ```
