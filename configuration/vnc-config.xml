@@ -38,7 +38,7 @@
  
  <property>
     <name>install.intellij</name>
-    <value>true</value>
+    <value>false</value>
     <description>Should IntelliJ also be installed?</description>
  </property>
   <property>
