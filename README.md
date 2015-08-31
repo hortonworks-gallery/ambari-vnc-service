@@ -303,7 +303,12 @@ storm jar target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial3.T
   - For **option 2**: For Twitter IoT workshop
 ```
 cd /root/hdp22-twitter-demo/stormtwitter-mvn
+
+#to run locally
 storm jar ./target/storm-streaming-1.0-SNAPSHOT.jar hellostorm.GNstorm runLocally localhost
+
+#to run on cluster instead
+storm jar ./target/storm-streaming-1.0-SNAPSHOT.jar hellostorm.GNstorm runOnCluster localhost
 ```  
 
   - For option 3: starter Twitter topology
