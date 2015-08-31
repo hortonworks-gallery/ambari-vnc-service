@@ -198,17 +198,39 @@ cd /root/hdp22-hive-streaming
 - For all 3 options (option 1 , option 2, option 3): follow steps below for next steps...
 
 - Once you already have your storm code on the VM, just import the dir containing the pom.xml into Eclipse:
-File > Import > Maven > Existing Maven Projects > Browse > navigate to your dir containing pom.xml (e.g. /opt/TruckEvents/Tutorials-master or **/root/hdp22-twitter-demo/stormtwitter-mvn** or /root/hdp22-hive-streaming)  > OK
+  - File
+  - Import
+  - Maven
+  - Existing Maven Projects
+  - Browse
+  - navigate to your dir containing pom.xml:
+    - For option 1: /opt/TruckEvents/Tutorials-master 
+    - **For option 2:** /root/hdp22-twitter-demo/stormtwitter-mvn
+    - For option 3: /root/hdp22-hive-streaming
+  - OK
 
 This will start building the project and importing the maven jars which may run for a few minutes. You will see errors in the project because the correct java version was not picked up.
 
-- Check the java compiler is using 1.7. After highlighting the project:
-File > Properties > Java Compiler > uncheck "use compliance from..." > set "Compiler compliance level" to 1.7 > Yes > OK
+- Check the java compiler is using 1.7. 
+  - select the project
+  - File
+  - Properties
+  - Java Compiler
+  - uncheck "use compliance from..."
+  - set "Compiler compliance level" to 1.7
+  - Yes
+  - OK
+  
 ![Image](../master/screenshots/eclipse-jdk-properties.png?raw=true)
 
 - The eclipse project should build on its own and not show errors (if not, you may need to add jars to the project properties)
 
-- To run maven compile: In Eclipse, click Run > Run Configurations > Maven Build
+- To run maven compile: 
+  - In Eclipse, click:
+    - Run
+    - Run Configurations
+    - Maven Build
+  
   - The first time you do this, it will ask you for the configuration:
     - Name: specify anything (e.g. streaming compile)
     - Base dir: base dir of source code (e.g. /opt/TruckEvents/Tutorials-master or **/root/hdp22-twitter-demo/stormtwitter-mvn** or /root/hdp22-hive-streaming)
@@ -221,7 +243,10 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
     - Click Run to start compile
     
 - Eclipse should now be able to run a mvn compile and create the uber jar. In the future you can just select below to compile:
-  - Run > Run History > streaming compile
+  - In Eclipse, click:
+    - Run
+    - Run History
+    - streaming compile
 
 - To setup Eclipse to run the topology: In Eclipse, click Run > External Tools > External Tools Configurations > Program > New, then:
   - For trucking demo tutorial
@@ -258,7 +283,10 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
     - click Run 
     
 - This should run your topology. In the future you can just select below to run the topology:
-  - Run > External Tools > Run storm topology locally 
+  - In Eclipse, click:
+    - Run
+    - External Tools
+    - Run storm topology locally 
       
 - You can also run your topology from command line, for example:
 
