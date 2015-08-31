@@ -235,7 +235,7 @@ This will start building the project and importing the maven jars which may run 
     - Name: specify anything (e.g. streaming compile)
     - Base dir: base dir of source code:
       - option 1: /opt/TruckEvents/Tutorials-master
-      - **option 2**: /root/hdp22-twitter-demo/stormtwitter-mvn**
+      - **option 2**: /root/hdp22-twitter-demo/stormtwitter-mvn
       - option 3: /root/hdp22-hive-streaming
     - Under ‘Goals’: clean install
     - Under Maven Runtime: (scroll down to see this option) add your existing mvn install on the sandbox (its faster than using the embedded one)
