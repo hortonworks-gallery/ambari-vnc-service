@@ -220,7 +220,8 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
     ![Image](../master/screenshots/maven-run-configuration.png?raw=true)
     - Click Run to start compile
     
-- Eclipse should now be able to run a mvn compile and create the uber jar
+- Eclipse should now be able to run a mvn compile and create the uber jar. In the future you can just select below to compile:
+  - Run > Run History > streaming compile
 
 - To setup Eclipse to run the topology: In Eclipse, click Run > External Tools > External Tools Configurations > Program > New, then:
   - For trucking demo tutorial
@@ -228,7 +229,7 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
     - Location: `/usr/bin/storm`
     - Working Directory: `/opt/TruckEvents/Tutorials-master`
     - Arguments: `target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial3.TruckEventProcessingTopology`
-     
+    - click Run 
     
   - **For Twitter IoT workshop** 
     - Name: `Run storm locally`
@@ -236,7 +237,7 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
     - Working Directory: `${workspace_loc:/storm-streaming}`
     - Arguments: `jar target/storm-streaming-1.0-SNAPSHOT.jar hellostorm.GNstorm runLocally localhost`
       - Note the above runs the topology locally. To run on the cluster instead: replace `runLocally` with `runOnCluster`
-
+    - click Run 
     ![Image](../master/screenshots/eclipse-runIoT.png?raw=true)
       
     - You can also run via CLI by:
@@ -249,13 +250,15 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
    storm jar target/storm-streaming-1.0-SNAPSHOT.jar hellostorm.GNstorm runOnCluster localhost
    ```  
 
-
   - starter Twitter topology
     - Name: `Run starter Twitter topology`
     - Location: `/usr/bin/storm`
     - Working Directory: `/root/hdp22-hive-streaming`
     - Arguments: `storm jar ./target/storm-integration-test-1.0-SNAPSHOT.jar test.HiveTopology thrift://sandbox.hortonworks.com:9083 default user_tweets twitter_topology`
-
+    - click Run 
+    
+- This should run your topology. In the future you can just select below to run the topology:
+  - Run > External Tools > Run storm topology locally 
       
 - You can also run your topology from command line, for example:
 
