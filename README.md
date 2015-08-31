@@ -230,7 +230,7 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
     - Arguments: `target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial3.TruckEventProcessingTopology`
      
     
-  - ** For Twitter IoT workshop** 
+  - **For Twitter IoT workshop** 
     - Name: `Run storm locally`
     - Location: `/usr/bin/storm`
     - Working Directory: `${workspace_loc:/storm-streaming}`
