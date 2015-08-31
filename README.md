@@ -208,9 +208,9 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
 
 - The eclipse project should build on its own and not show errors (if not, you may need to add jars to the project properties)
 
-- To run maven compile: Run > Run Configurations > Maven Build
+- To run maven compile: In Eclipse, click Run > Run Configurations > Maven Build
   - The first time you do this, it will ask you for the configuration:
-    - Name: specify anything (e.g. streaming)
+    - Name: specify anything (e.g. streaming compile)
     - Base dir: base dir of source code (e.g. /opt/TruckEvents/Tutorials-master or **/root/hdp22-twitter-demo/stormtwitter-mvn** or /root/hdp22-hive-streaming)
     - Under ‘Goals’: clean install
     - Under Maven Runtime: (scroll down to see this option) add your existing mvn install on the sandbox (its faster than using the embedded one)
@@ -222,14 +222,50 @@ File > Properties > Java Compiler > uncheck "use compliance from..." > set "Comp
     
 - Eclipse should now be able to run a mvn compile and create the uber jar
 
-- Now from terminal, run your topology as you normally would, for example:
+- To setup Eclipse to run the topology: In Eclipse, click Run > External Tools > External Tools Configurations > Program > New, then:
+  - For trucking demo tutorial
+    - Name: `Run storm locally`
+    - Location: `/usr/bin/storm`
+    - Working Directory: `/opt/TruckEvents/Tutorials-master`
+    - Arguments: `target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial3.TruckEventProcessingTopology`
+     
+    
+  - ** For Twitter IoT workshop** 
+    - Name: `Run storm locally`
+    - Location: `/usr/bin/storm`
+    - Working Directory: `${workspace_loc:/storm-streaming}`
+    - Arguments: `jar target/storm-streaming-1.0-SNAPSHOT.jar hellostorm.GNstorm runLocally localhost`
+      - Note the above runs the topology locally. To run on the cluster instead: replace `runLocally` with `runOnCluster`
+
+    ![Image](../master/screenshots/eclipse-runIoT.png?raw=true)
+      
+    - You can also run via CLI by:
+   ```
+   cd /root/hdp22-twitter-demo/stormtwitter-mvn
+   #run locally
+   storm jar target/storm-streaming-1.0-SNAPSHOT.jar hellostorm.GNstorm runLocally localhost
+
+   #or run on cluster
+   storm jar target/storm-streaming-1.0-SNAPSHOT.jar hellostorm.GNstorm runOnCluster localhost
+   ```  
+
+
+  - starter Twitter topology
+    - Name: `Run starter Twitter topology`
+    - Location: `/usr/bin/storm`
+    - Working Directory: `/root/hdp22-hive-streaming`
+    - Arguments: `storm jar ./target/storm-integration-test-1.0-SNAPSHOT.jar test.HiveTopology thrift://sandbox.hortonworks.com:9083 default user_tweets twitter_topology`
+
+      
+- You can also run your topology from command line, for example:
+
   - For trucking demo tutorial:
 ```
 cd /opt/TruckEvents/Tutorials-master/
 storm jar target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial2.TruckEventProcessingTopology
 storm jar target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial3.TruckEventProcessingTopology
-```    
-
+```   
+    
   - **For Twitter IoT workshop**
 ```
 cd /root/hdp22-twitter-demo/stormtwitter-mvn
