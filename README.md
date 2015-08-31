@@ -251,7 +251,7 @@ This will start building the project and importing the maven jars which may run 
     - Run History
     - streaming compile
 
-- To setup Eclipse to run the topology: 
+- Now to setup Eclipse to *run the compiled topology* lets create an external tools config: 
   - In Eclipse, click 
     - Run
     - External Tools
@@ -259,7 +259,7 @@ This will start building the project and importing the maven jars which may run 
     - Program
     - New
     
-  - Then create an external config based on which option you are using:
+  - Then configure the external config based on which option you are using:
   
   - Option 1: For trucking demo tutorial
     - Name: `Run storm locally`
