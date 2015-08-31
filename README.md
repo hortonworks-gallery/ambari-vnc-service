@@ -320,18 +320,16 @@ hive -e 'select * from user_tweets'
 storm kill twitter_topology
 ```    
 
+- You have successfully imported a Storm maven project into Eclipse and setup the ability to compile/run from Eclipse
+
+
 -----------------
 
-#### Getting started with Spark TP on HDP
+#### Getting started with Spark on HDP
 
-- Run the Spark Pi example
-```
-/usr/spark-1.2/bin/spark-submit --class org.apache.spark.examples.SparkPi    --master yarn-cluster  --num-executors 3 --driver-memory 512m  --executor-memory 512m   --executor-cores 1  /usr/spark-1.2/lib/spark-examples*.jar
-```
+- Follow tutorial from here: http://hortonworks.com/hadoop-tutorial/a-lap-around-apache-spark-1-3-1-with-hdp-2-3/
 
-- Follow the rest of the examples from the Spark 1.2 on Yarn TP: http://hortonworks.com/hadoop-tutorial/using-apache-spark-hdp/
-
-- You can also try the official tutorials [here](http://hortonworks.com/tutorials/)
+- To use Spark 1.4.1 on Yarn TP, you can follow steps from: http://hortonworks.com/hadoop-tutorial/apache-spark-1-4-1-technical-preview-with-hdp/ 
 
 - Try the code samples from our techical webinars on Spark:
 http://hortonworks.com/partners/learn/#spark
