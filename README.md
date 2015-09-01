@@ -156,12 +156,17 @@ wget https://www.dropbox.com/s/7gk1u3khrfaz3tu/Tutorials-master.zip
 unzip Tutorials-master.zip
 ```
 
-- **Option 2: Download code for the Twitter IoT workshop topology**
+- **Option 2: Download code for the Twitter IoT workshop topology** if not done already
 ```
 cd
 git clone https://github.com/hortonworks-gallery/hdp22-twitter-demo.git 
 ```
 
+  - Also start Solr/Banana if not already started at http://sandbox.hortonworks.com:8983/solr and  http://sandbox.hortonworks.com:8983/banana
+  ```
+  /root/hdp22-twitter-demo/setup-scripts/restart_solr_banana.sh
+  ```
+  
 - Option 3: Download code for starter Twitter storm topology
 ```
 cd 
