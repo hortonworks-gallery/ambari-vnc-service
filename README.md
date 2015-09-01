@@ -163,6 +163,7 @@ git clone https://github.com/hortonworks-gallery/hdp22-twitter-demo.git
 ```
 
   - Also start Solr/Banana if not already started at http://sandbox.hortonworks.com:8983/solr and  http://sandbox.hortonworks.com:8983/banana
+  
   ```
   /root/hdp22-twitter-demo/setup-scripts/restart_solr_banana.sh
   ```
