@@ -44,19 +44,19 @@ class Master(Script):
 
     if params.install_eclipse:
         Execute('echo "Installing eclipse..." >> '+params.log_location)     
-        Execute('wget ' +params.eclipse_location+' -O /usr/eclipse.tar.gz  >> '+params.log_location)
+        Execute('wget ' +params.eclipse_location+' -O /usr/eclipse.tar.gz  -a '+params.log_location)
         Execute('tar -zxvf /usr/eclipse.tar.gz -C /usr/  >> '+params.log_location)
         Execute('echo  eclipse install complete  >> '+params.log_location)        
 
     if params.install_intellij:
         Execute('echo "Installing intelliJ..."  >> '+params.log_location)    
-        Execute('wget '+params.intellij_location+' -O  /usr/ideaIC.tar.gz  >> '+params.log_location)
+        Execute('wget '+params.intellij_location+' -O  /usr/ideaIC.tar.gz  -a '+params.log_location)
         Execute('tar -zxvf /usr/ideaIC.tar.gz -C /usr/  >> '+params.log_location)
         Execute('echo "intelliJ install complete"  >> '+params.log_location)    
         
     if params.install_spark:
         Execute('echo "Installing spark..."  >> '+params.log_location)
-        Execute('wget '+params.spark_location+' -O  /usr/spark-1.2.tgz  >> '+params.log_location)
+        Execute('wget '+params.spark_location+' -O  /usr/spark-1.2.tgz  -a '+params.log_location)
         Execute('tar xvfz /usr/spark-1.2.tgz -C /usr/  >> '+params.log_location)  
         Execute('mv `find /usr  -maxdepth 1 -type d -name "spark-*"` /usr/spark-1.2')          
 
