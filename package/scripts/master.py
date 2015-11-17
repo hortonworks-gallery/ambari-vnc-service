@@ -39,7 +39,7 @@ class Master(Script):
         mvn_repo='/etc/yum.repos.d/epel-apache-maven.repo'    
         if not os.path.exists(mvn_repo):
           Execute('curl -o '+mvn_repo+' https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo')
-        Execute('yum -y install apache-maven >> '+params.log_location)      
+        Execute('yum -y install apache-maven-3.2* >> '+params.log_location)      
         Execute("echo maven install complete  >> "+params.log_location)         
 
     if params.install_eclipse:
