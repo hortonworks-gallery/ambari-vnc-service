@@ -356,6 +356,10 @@ http://hortonworks.com/partners/learn/#ml2
 - Install Nifi on sandbox via Ambari and build a Twitter dashboard:
 https://community.hortonworks.com/content/kbentry/1282/sample-hdfnifi-flow-to-push-tweets-into-solrbanana.html
 
+![Image](https://raw.githubusercontent.com/abajwa-hw/ambari-nifi-service/master/screenshots/twitter-flow.png)
+
+![Image](https://raw.githubusercontent.com/abajwa-hw/ambari-nifi-service/master/screenshots/banana-view-1.png)
+
 - After installing eclipse on sandbox, use it to build a custom Nifi processor:
 https://community.hortonworks.com/articles/4356/getting-started-with-nifi-expression-language-and.html
 
