@@ -15,6 +15,7 @@ Author: [Ali Bajwa](https://www.linkedin.com/in/aliabajwa)
 - [Getting started with Eclipse/IntelliJ](https://github.com/hortonworks-gallery/ambari-vnc-service#getting-started-with-eclipseintellij)
 - [Getting started with Storm and Maven in Eclipse environment on HDP](https://github.com/hortonworks-gallery/ambari-vnc-service#getting-started-with-storm-and-maven-in-eclipse-environment)
 - [Getting started with Spark on HDP](https://github.com/hortonworks-gallery/ambari-vnc-service#getting-started-with-spark-on-hdp)
+- [Getting started with Nifi on HDP](https://github.com/hortonworks-gallery/ambari-vnc-service#getting-started-with-nifi-on-hdp)
 - [Getting started with Data science with Zeppelin on HDP](https://github.com/hortonworks-gallery/ambari-vnc-service#getting-started-with-zeppelin-on-hdp)
 - [Getting started with Data science with iPython on HDP](https://github.com/hortonworks-gallery/ambari-vnc-service#getting-started-with-ipython-notebook-on-hdp)
 
