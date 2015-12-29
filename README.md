@@ -338,9 +338,11 @@ storm kill twitter_topology
 
 #### Getting started with Spark on HDP
 
-- Follow tutorial from here: http://hortonworks.com/hadoop-tutorial/a-lap-around-apache-spark-1-3-1-with-hdp-2-3/
+Spark now comes installed on HDP sandbox. You can get started using the tutorials provided:
 
-- To use Spark 1.4.1 on Yarn TP, you can follow steps from: http://hortonworks.com/hadoop-tutorial/apache-spark-1-4-1-technical-preview-with-hdp/ 
+
+- Try tutorials form here:
+http://hortonworks.com/hadoop/spark/
 
 - Try the code samples from our techical webinars on Spark:
 http://hortonworks.com/partners/learn/#spark
@@ -348,6 +350,15 @@ http://hortonworks.com/partners/learn/#ml2
 
 -------------------
 
+#### Getting started with Nifi on HDP
+
+- Install Nifi on sandbox via Ambari and build a Twitter dashboard:
+https://community.hortonworks.com/content/kbentry/1282/sample-hdfnifi-flow-to-push-tweets-into-solrbanana.html
+
+- After installing eclipse on sandbox, use it to build a custom Nifi processor:
+https://community.hortonworks.com/articles/4356/getting-started-with-nifi-expression-language-and.html
+
+-------------------
 
 #### Getting started with Zeppelin on HDP
 
