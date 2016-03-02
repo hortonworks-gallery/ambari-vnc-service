@@ -43,7 +43,7 @@
  </property>
   <property>
     <name>intellij.location</name>
-    <value>https://d1opms6zj7jotq.cloudfront.net/idea/ideaIC-14.1.4.tar.gz</value>
+    <value>https://d1opms6zj7jotq.cloudfront.net/idea/ideaIC-15.0.4.tar.gz</value>
     <description>Location to pull IntelliJ bits from</description>
  </property>
   
