@@ -32,7 +32,7 @@
  </property>
   <property>
     <name>eclipse.location</name>
-    <value>http://ftp.osuosl.org/pub/eclipse//technology/epp/downloads/release/luna/SR1a/eclipse-java-luna-SR1a-linux-gtk-x86_64.tar.gz</value>
+    <value>http://ftp.osuosl.org/pub/eclipse/technology/epp/downloads/release/neon/R/eclipse-java-neon-R-linux-gtk-x86_64.tar.gz</value>
     <description>Location to pull eclipse bits from</description>
  </property>
  
@@ -43,7 +43,7 @@
  </property>
   <property>
     <name>intellij.location</name>
-    <value>https://d1opms6zj7jotq.cloudfront.net/idea/ideaIC-15.0.4.tar.gz</value>
+    <value>https://download-cf.jetbrains.com/idea/ideaIC-2016.2.1.tar.gz</value>
     <description>Location to pull IntelliJ bits from</description>
  </property>
   
